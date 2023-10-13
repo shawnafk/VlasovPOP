@@ -1,0 +1,592 @@
+\section{Theory}
+\label{sec:theory}
+%Hamiltonian 
+%Given the Hamiltonian and wave form (original)
+%PART I: THE WAVE
+We consider a single electron with mass $m_e$ gyrating in a weakly inhomogeneous magnetic field.
+It interacts with a small amplitude banded traveling wave with varying phase $\phi_q$.
+The wave vector potential can be represented in Fourier integral
+\begin{equation}\label{eq.def_A}
+    \mathbf{A}(s,t) =  \int_{-\infty}^{\infty}\mathrm{d} q~ \mathbf{A}\left(q,t\right) \exp(\imath\phi_{q})~,
+\end{equation}
+where $\omega$ is the wave frequency, $s$ is the coordinates along the field line, $q$ is the Fourier harmonic number, and $\phi_q \equiv \int^t \omega(q, \tau)d\tau - q s$.
+Here, we concern with the resonant interactions along a one-dimensional magnetic field line, thus $s$ and $q$ are in scalar form, for simplicity.
+\subsection{The local Hamiltonian theory}
+%PART II: THE HAMILTONIAN
+Considering the perturbed wave field is much smaller than the background field, we can treat the system perturbatively as the equilibrium part and the perturbed part.
+The former describes the particle motion in a slowly-varying magnetic field, and it is typically associated with three adiabatic invariants associated with the unperturbed equilibrium, namely the magnetic moment, the longitudinal invariant, and the flux invariants.
+They correspond to the gyromotion, the mirror bounce motion, and the drift motion perpendicular to the magnetic field.
+Since the timescale of perpendicular drift motion is very slow compare to the time period of the wave instabilities, we can neglect drift motion, and leave the equilibrium Hamiltonian as
+\begin{equation}
+    H_0(\varphi,\mu;s,p_\|) =  \frac{p_\|^2}{2 m_e} + \mu \omega_{ce}(s)~,
+\end{equation}
+where $\varphi$ is the particle gyroangle, $p_\|$ is the parallel momentum, $\omega_{ce}$ is the particle gyrofrequency, and $\mu \equiv m v_\perp^2/2 \omega_{ce}$.
+While the latter describes the interaction with the banded wave, and the Hamiltonian can be similarly represented in a Fourier integral form
+\begin{equation}\label{eq.def_H}
+    \delta H(\varphi,\mu; s,p_\|;t) = \frac{1}{2}\left(\int_{-\infty}^{\infty} \mathrm{d} q~{\delta H}\left(\mu, p_\|, q ; t\right) e^{\imath\left(\phi_{q}-\varphi\right)}+ \mathrm{c.c}\right)~,
+\end{equation}
+where $\phi_q - \varphi$ is the difference between the wave angle and the gyroangel.
+Note that the perturbed field is much less than the equilibrium field, we still regard $s$ and $\phi$ as canonical coordinates, and $p_\parallel$ and $\mu$ as canonical momentum for the total Hamiltonian.
+
+%Why we have to study the Hamiltonian on the cell
+%the canonical pertubation theory
+%Conventionally, the gyrokinetics based on the non-canonical perturbation theory can be applied to eliminate the fast gyromotion scale. However, according to the above scale analysis, finding suitable coordinates for scale separation is hard.
+%Instead, we propose a method using the local canonical perturbation to avoid the Jacobi calculation and separate the spatial-temporal scales based on the locality of the dynamics.
+%\subsubsection{The expansion of the phase on the cell}
+%The expansion of phi on the cell
+The wave form and the Hamiltonian in Eqs. (\ref{eq.def_A}) and (\ref{eq.def_H}) involves wave phase $\phi_q$ and the particle gyro phase $\varphi$. Both of them change fast in the laboratory frame of reference. While the wave-particle interaction scale and the adiabatic motion scales in the equilibrium magnetic field are considerable slower. 
+We here example several typical motion scales and their characteristic time and length. There has wave oscillation scale, as in frequency $\omega$ and wavenumber $k$; particle gyration scale, as in $\omega_\mathrm{ce}$; wave trapped particle bounce frequency $\omega_\mathrm{b}$; wave chirping scale, as in $\dot{\omega}/\omega$, $\nabla k/k$, and $\nabla a/a$; background spatial nonuniformity scale, as in $\nabla B/B$; particle parallel bouncing scale $\omega_B$ and $L_\mathrm{B}$; particle transverse drift scale, as in $\omega_D$ and $L_\mathrm{d}$. 
+For the chorus wave in the Earth's dipole field, the relations of the characteristic scales are
+\begin{equation}
+    \begin{aligned}
+        \omega_\mathrm{ce} \sim \omega \gg \omega_\mathrm{b} \sim \dot\omega/\omega  \gg \omega_\mathrm{B} \gg \omega_\mathrm{d}~,\\
+        k \gg \nabla k/k\sim \nabla a/a \gg \nabla B/B \sim L_\mathrm{B}^{-1} \gg L_\mathrm{d}^{-1}~.
+    \end{aligned}
+\end{equation}
+The last scale corresponds to the third adiabatic invariant, which is well-conserved in our studies. 
+In contrast, the second to last one corresponds to the longitudinal invariant and is not constant of motion due to the perturbation in our study.  
+
+Our Hamiltonian theory aim to separate those motion scales, and focus on the resonant wave-particle interaction in such circumstance.  
+Note that the resonant interaction indicates the particle and the wave stay enduringly, and the motion scale seen by the particle is considerably slow. 
+Therefore, if we choose a reference frame moving in the local resonant velocity, the resonance particles are at rest and see a nearly constant wave phase.
+For the inhomogeneous magnetic field, we can apply the local reference frames for a discretized finite length subdomains, referred as the ``cell''.
+We divide the continuous $s$ into numerous cells, centering at $s_i$ where $i$ is the index of the cell. The cell moves in the resonance velocity, i.e.,
+\begin{equation}
+    %for 1st cyclone resonance
+    \frac{\mathrm{d} s_i}{\mathrm{d}t} = v_r(s_i) \equiv \frac{\omega_{i}\left(k_{i}(t), t\right)-\omega_{ce}\left(s_{i}(t)\right)}{k_{i}(t)}~,
+\end{equation}
+Each cell represents a local resonance reference frame, and within a cell, we can locally expand the related quantities with respect to the cell center.
+The phase $\phi_q$ is then splits into the fast and slowly varying terms, i.e., $\phi_q \simeq \phi_{f} + \phi_{s}$.
+%del . The spectrum broadening due to frequency chirping is small within the resonance cell. Thus,
+We recall the fast varying phase
+\begin{equation}
+    \phi_q \equiv \int^t \omega(q, \tau)d\tau - q s~.
+\end{equation}
+For the triggering frequency chirping emission, although the background wave has a broad spectrum, the unstable mode is narrow in spectrum space.
+Thus, we treat the wave spectrum as locally centered at $k_i(s_i,t)$ along the magnetic field line, and we can expand the phase with respect to the cell center.
+The Taylor expansion of the frequency in the first term up to the first-order is
+\begin{equation}
+    \omega(q,\tau) \simeq \omega_{i}\left(k_{i}(\tau), \tau\right) + \frac{\partial \omega}{\partial k_{i}}\left(q-k_{i}(\tau)\right)~.
+\end{equation}
+We further expand $q s$ and keep the terms up to the first-order,
+\begin{equation}
+    \begin{aligned}
+        q s & = (k_i + (q-k_i)) (s_i+(s-s_i))           \\
+            & \simeq  q s_i + k_i (s-s_i)                 \\
+            & = q \int^t v_r(\tau) d \tau  + k_i (s-s_i)~.
+    \end{aligned}
+\end{equation}
+The derivation is under the condition that the width of cell $l$ is enough small, so that the phase difference due to finite spreading of spectrum satisfies $\left(q-k_i(t)\right) l \ll 1$.
+
+The expansion of $\phi_q$ then becomes
+\begin{equation}
+    \phi_{q} \simeq \int^{t}\mathrm{d} \tau  \left(\omega_{i}\left(k_{i}(\tau), \tau\right) + \frac{\partial \omega}{\partial k_{i}}\left(q-k_{i}(\tau)\right) \right) -  q \int^t v_r(\tau) d \tau  - k_{i}(t)\left(s-s_{i}(t)\right)~.
+\end{equation}
+Applying the first-order cyclotron resonant condition at cell center,
+\begin{equation}
+    \omega_i - k_i v_r - \omega_{ce} = 0~,
+\end{equation}
+and replacing $\omega_i$, we have
+%\lipsum[1]
+%\begin{widetext}
+%\[
+%    \phi_q \simeq \int^{t}  d \tau \left( \omega_{c e}\left(s_{i}(\tau)\right)+ k_i(\tau) v_r(\tau)  + \left(q-k_{i}(\tau)\right)\frac{\partial \omega}{\partial k_{i}} \right) - q \int^t v_r(\tau) d \tau - k_{i}(t)\left(s-s_{i}(t)\right)~.
+%\]
+%\end{widetext}
+%\lipsum[1]
+\begin{equation}
+        \phi_q \simeq \int^{t}  d \tau \left( \omega_{c e}\left(s_{i}(\tau)\right)+ k_i(\tau) v_r(\tau)  + \left(q-k_{i}(\tau)\right)\frac{\partial \omega}{\partial k_{i}} \right) - q \int^t v_r(\tau) d \tau - k_{i}(t)\left(s-s_{i}(t)\right)~.
+\end{equation}
+It is clear that the phase has been split into the fast and slowly varying scale, i.e.,
+\begin{equation}\label{eq.phi_fs}
+    \begin{aligned}
+        \phi_q & \simeq \phi_{f} + \phi_{s}
+        \\
+        \phi_f & = \int^{t} \omega_{ce} \left(s_{i}(\tau)\right) d \tau -k_{i}(t)\left(s-s_{i}(t)\right)
+        \\
+        \phi_s & = \int^{t}\left(q-k_{i}(\tau)\right)\left(\frac{\partial \omega}{\partial k_{i}}-v_{i}(\tau)\right) d \tau~.
+    \end{aligned}
+\end{equation}
+
+For the slowly varying chirping wave, $\phi_s$ describes the slow variation of the wave kernel, which is related to the changing wave number and the velocity difference observed in the cell reference frame, i.e., $\int^t\Delta v \Delta k \mathrm{d} \tau$.
+On the other hand, the term $\phi_f$ is qualitatively equal to $\omega_i t - k_i s_i$ is the fast varying wave phase inside the envelope.
+
+%The Hamiltonian in Eq.~(\ref{eq.kernel_H}) and the wave field in Eq.~(\ref{eq.kernel_A}) have been transformed into the product of the local slowly-varying kernel on $s_i$ and the fast-varying phase.
+To obtain the dynamics in the local reference frame, we have to change the Hamiltonian on the global domain to that represented on each individual local reference frames.
+The form of the separated phase hints us to construct a new canonical transformation given by a generating function of the second kind,
+%F(q,P)
+%k_{i}(t)\left(s-s_{i}(t)\right)+ \varphi-\int^{t} \omega_{ce}\left(s_{i}(\tau)\right)\mathrm{d}\tau
+\begin{equation}\label{eq.gf2}
+        F_{i}(s, \varphi ; \Omega, \mathcal{J};t) = \left(\varphi - \phi_f \right) \left(\Omega+\Pi_{i}(t)\right) +\left(\varphi-\int^{t} \omega_{ce}\left(s_{i}(\tau)\right)\mathrm{d}\tau\right)\mathcal{J}~,
+\end{equation}
+where $s$ and $\varphi$ are the old canonical coordinates, while $\Omega$ and $\mathcal{J}$ are the canonical momentum of the new Hamiltonian. 
+$\Pi_i(t)$ is a to-be-determined function only depend on time.
+We will show that the choice of $\Pi_i$ depends on the resonance velocity, which converts the dynamics to each local resonance reference frames.
+%It is set according to the requirement of the new Hamiltonian. 
+According to the definition of the generating function \cite{goldstein2001}, we can obtain the new canonical coordinates are 
+%k_{i}(t)\left(s-s_{i}(t)\right)+\varphi-\int^{t} \omega_{c e}\left(s_{i}(\tau)\right) d \tau =
+\begin{equation}\label{eq.newQ}
+    \begin{aligned}
+         \xi & \equiv \frac{\partial F_i}{\partial \Omega} =  \varphi - \phi_f~,
+         \\ 
+        \vartheta & \equiv   \frac{\partial F_i}{\partial \mathcal{J}} = \varphi -\int^{t} \omega_{c e}\left(s_{i}(\tau)\right) d \tau ~,
+    \end{aligned}
+\end{equation}
+The generating function also gives,
+\begin{equation}
+    \begin{aligned}
+        p_\| & \equiv \frac{\partial F_i}{\partial s} = k_{i}(t)( \Omega+\Pi_{i}(t))~,
+        \\
+        \mu & \equiv \frac{\partial F_i}{\partial \varphi} = \mathcal{J} +\Omega+\Pi_{i}(t)~,
+    \end{aligned}
+\end{equation}
+which then yields the new canonical momenta
+\begin{equation}\label{eq.newP}
+    \begin{aligned}
+        \Omega & = \frac{p_{\|}}{k_{i}(t)}-\Pi_{i}(t)~,
+        \\
+        \mathcal{J}   & = \mu-\Omega-\Pi_{i}(t)=\mu-\frac{p_{\|}}{k_{i}(t)}~.
+    \end{aligned}
+\end{equation}
+The new variable $\xi,~\Omega$ denoting the particle gyro phase and parallel momentum at the cell frame of reference.
+For the homogeneous magnetic field, $\vartheta$ is called the helical angle, and $\mathcal{J}$ is the conjugated helical invariant.
+%where the canonical coordinate $\xi$ is the fast varying variable carrying with the wave fluctuations and $s_i(t)$ is the slowly varying variable carrying with the wave envelope during the wave-particle interaction.
+
+The generating function in Eq.~(\ref{eq.gf2}) is unique for each local cell, it readily changes the Hamiltonian in the laboratory frame to the local resonance frame.
+The new Hamiltonian with canonical variables $(\vartheta,\mathcal{J},\xi,\Omega)$ on the cell can be obtained from 
+\begin{equation}\label{eq.HamiltonianK}
+    H_{i} (\xi, \Omega, \vartheta, J ; t)=H_{0}+ \delta H_i+\frac{\partial F_{i}}{\partial t}~.
+\end{equation}
+The equilibrium part in the first term is 
+\begin{equation}\label{eq.ctH0}
+    \begin{aligned}
+     H_0 &= \frac{k_{i}^{2}(t)\left(\Omega+\Pi_{i}(t)\right)^{2}}{2 m_{e}}+\left(J+\Omega+\Pi_{i}(t)\right) \cdot \omega_{c e}(s) 
+     \\
+        & \simeq \frac{k_{i}^{2}(t)\left(\Omega+\Pi_{i}(t)\right)^{2}}{2 m_{e}}+\left(J+\Omega+\Pi_{i}(t)\right) \cdot \left(\omega_{c e}(s_i) +  \frac{\partial \omega_{ce}}{\partial s} \frac{\xi - \vartheta}{k_i(t)}\right)
+    \end{aligned}
+\end{equation}
+where we expand $\omega(s)$ with respect to the cell center $s_i$, and the displacement to the cell center is $s - s_{i}(t) \equiv (\xi-\vartheta)/k_{i}(t)$ according to the definition of the canonical variables in Eq.~(\ref{eq.newQ}). 
+
+%The time dependent function $\Pi_i(t) \equiv (m_e / k_i) \cdot \mathrm{d}{s}_i/\mathrm{d}t$
+The time derivative of the generating function yields
+\begin{equation}\label{eq.pFpt}
+    \begin{aligned}
+    \frac{\partial F_i}{\partial t} & = \frac{\mathrm{d} k_i}{\mathrm{d} t}(\Omega + \Pi(t)) \frac{\xi-\vartheta}{k_i(t)} 
+    \\
+    &- k_i\left(\Omega+\Pi_i(t)\right) \frac{\mathrm{d} s_i}{\mathrm{d} t} + \frac{\mathrm{d} \Pi_i}{\mathrm{d} t} \xi - (\mathcal{J} + \Omega + \Pi_i)\omega_{ce}(s_i(t)) 
+    \end{aligned}
+\end{equation}
+Collecting the terms in Eq.~(\ref{eq.ctH0}) and Eq.~(\ref{eq.pFpt}), we have
+\begin{equation}\label{eq.merge}
+    \begin{aligned}
+    H_0 + \frac{\partial F_i}{\partial t} & = \frac{k_{i}^{2}(t) \Omega^{2}}{2 m_{e}}+\left(\frac{k_{i}^{2}(t)}{m_{e}} \Pi_{i}(t)-k_i(t) \frac{\mathrm{d} s_i}{\mathrm{d} t}\right) \Omega
+    \\
+    &+\frac{\mathrm{d}\Pi_{i}}{\mathrm{d}t} \xi
+     +\left[\left(\frac{\mathrm{d}k_{i}}{\mathrm{d}t}+\frac{\mathrm{d}\omega_{c e}}{\mathrm{d}s_{i}}\right)\left(\Omega+\Pi_{i}(t)\right)+\frac{\mathrm{d}\omega_{c e}}{\mathrm{d}s_{i}} J\right]\left(\frac{\xi-\vartheta}{k_{i}(t)}\right)
+     \\
+     &+ \frac{k_i^2}{2m_e} \Pi_i^2 - k_i \frac{\mathrm{d} s_i}{\mathrm{d}t}\Pi_i(t) ~.
+    \end{aligned}
+\end{equation}
+Note that the last two terms in the above equation can be neglected.
+Those terms are canonical variables free, i.e., they do not contribute to the dynamics and can be eliminated readily by introducing an arbitrary time dependent function in the $F_i$ in the first place. 
+
+Besides, we have to eliminate the major linear terms of the new momentum $\Omega$ by setting, 
+\begin{equation}\label{eq.PI}
+    \Pi_i(t) = \frac{m_e}{k_i(t)}\frac{\mathrm{d} s_i}{\mathrm{d} t} = \frac{m_e}{k_i^2(t)}(\omega_i - \omega_{ce}(s_i))~.
+\end{equation}
+Consequently, we have $\Omega \approx 0$ for particle near the resonance.
+Thus the second linear term of $\Omega$ can be neglected whenever the background parameters change slowly in one bounce period $\omega_b^{-1}$ of the particle trapped in the electromagnetic wave field, i.e.,
+\begin{equation}
+    \frac{\mathrm{d} k_i}{\mathrm{d} t} + \frac{\partial \omega_{ce}}{\partial s_i} \ll k_i(t) \omega_b~.
+\end{equation}
+Moreover, with the $\Pi_i$ defined in Eq.~(\ref{eq.PI}), we have
+\begin{equation}
+    \frac{\mathrm{d}\Pi_i}{\mathrm{d}t} = \frac{m_e}{k_i(t)}\frac{\mathrm{d}s_i^2}{\mathrm{d t^2}} - \frac{\mathrm{d}k_i}{\mathrm{d t}}\frac{\Pi_i}{k_i}~.
+\end{equation}
+Substituted it into Eq.~(\ref{eq.merge}), we have 
+\begin{equation}
+    \begin{aligned}
+        H_0 + \frac{\partial F_i}{\partial t} & \approx-\left[\left(\frac{\mathrm{d}k_{i}}{\mathrm{d}t}+\frac{\mathrm{d}\omega_{c e}}{\mathrm{d}s_{i}}\right) \Pi_{i}(t)+\frac{\mathrm{d}\omega_{c e}}{\mathrm{d}s_{i}} J\right] \frac{\vartheta}{k_{i}(t)} 
+        \\
+         & +\frac{k_{i}^{2}(t) \Omega^{2}}{2 m_{e}}+\left[m_{e} \frac{d^{2} s_{i}}{\mathrm{d}t^{2}}+\frac{\mathrm{d}\omega_{c e}}{\mathrm{d}s_{i}}\left(J+\Pi_{i}(t)\right)\right] \frac{\xi}{k_{i}(t)} 
+    \end{aligned}
+\end{equation}
+
+As to the perturbed Hamiltonian, according to the definition in Eq. (\ref{eq.def_H}), we first separate the phase $\phi_q$ according to equation (\ref{eq.phi_fs}), and obtain
+\begin{equation}\label{eq.kernel_H}
+    \begin{aligned}
+        \delta H(\varphi,\mu;s,p_\|;t) & \simeq e^{\imath\left(\phi_{f}-\varphi\right)} \int_{-\infty}^{\infty} \mathrm{d} q~ \delta H\left(\mu, p_\|, q ; t\right)  e^{\imath \phi_{s}} \\
+        & = \delta H\left(\mu, p_\|, s_i; t\right)e^{\imath\left(\phi_{f}-\varphi\right)}~.
+    \end{aligned}
+\end{equation}
+The real part of the perturbed Hamiltonian $\delta H\left(\mu, p_\|, s_i; t\right)$ is given in terms of the perturbed wave envelope as $e |v_{\perp}|\cdot|a\left(s_{i}, t\right)|/c$.
+In the new canonical coordinates it becomes
+\begin{equation}
+    \sqrt{\frac{2\omega_{c e}\left(s_{i}\right)\left(J+\Omega+\Pi_{i}(t)\right)}{m_e}} \frac{e |a\left(s_{i}, t\right)|}{c} = m_e \frac{\omega_b^2}{k_i^2}~,
+\end{equation}
+where trapped particle bounce frequency $\omega_b \equiv e \delta B  k_i v_\perp / m_e c$ in previous studies \cite{omura_theory_2008,sudan_theory_1971,tao_theoretical_2020} now satisfies
+\begin{equation}
+    \omega_b^2 = \frac{e}{m_e c} \sqrt{\frac{2\omega_{ce}\left(s_{i}\right)\left(\mathcal{J}+\Omega+\Pi_{i}\right)}{m_e}} k_{i}^2 |a(s_{i}, t)|~.
+\end{equation}
+The phase term of the perturbed Hamiltonian, simply written in new canonical angle as $\exp({\imath\left(\phi_{f}-\varphi\right)}) = \exp{(- \imath \xi)}$. 
+
+The final perturbed Hamiltonian is 
+\begin{equation}
+        \delta H_i\left(\Omega, J; s_{i}, t\right) = \frac{1}{2}\left(\delta H_i e^{-\imath \xi}+ \mathrm{c.c}\right) = m_e \frac{\omega_b^2}{k_i^2} \cos\xi~.
+\end{equation}
+Merging equilibrium and the perturbed Hamiltonian we have
+\begin{equation}\label{eq.H_all_0}
+    \begin{aligned}
+        H_i\left(\xi, \Omega;\vartheta, J; s_{i}, t\right) &= \frac{k_{i}^{2}(t) \Omega^{2}}{2 m_{e}}+\left[m_{e} \frac{d^{2} s_{i}}{\mathrm{d}t^{2}}+\frac{\mathrm{d}\omega_{c e}}{\mathrm{d}s_{i}}\left(J+\Pi_{i}(t)\right)\right] \frac{\xi}{k_{i}(t)} 
+        \\
+        &-\left[\left(\frac{\mathrm{d}k_{i}}{\mathrm{d}t}+\frac{\mathrm{d}\omega_{c e}}{\mathrm{d}s_{i}}\right) \Pi_{i}(t)+\frac{\mathrm{d}\omega_{c e}}{\mathrm{d}s_{i}} J\right] \frac{\vartheta}{k_{i}(t)} 
+        \\
+        & + m_e \frac{\omega_b^2}{k_i^2} \cos\xi~.
+    \end{aligned}
+\end{equation}
+
+%def alpha first
+Here, we introduce a dimensionless parameter $\alpha$ from shown in equation (\ref{eq.H_all_0})
+\begin{equation}\label{eq.alp0}
+    \alpha = \frac{1}{\omega_b^2}\left[k_i \frac{\mathrm{d}^{2} s_{i}}{\mathrm{d} t^{2}}+ \frac{k_i}{m_{e}} \frac{\partial \omega_{ce}}{\partial s_{i}}\left(\mathcal{J}+\Pi_{i}(t)\right)\right]~.
+\end{equation}
+We can further simplify $\alpha$ by expanding the second order derivative of $s_i$ to show the physics meaning of $\alpha$, 
+\begin{equation}
+    \begin{aligned}
+    \frac{\mathrm{d^2}s_i}{\mathrm{d}t^2} &= \frac{\mathrm{d}v_r}{\mathrm{d}t} = \frac{\mathrm{d}}{\mathrm{d}t} \frac{\omega_i - \omega_{ce}}{k_i}
+    \\
+    & = \frac{1}{k_i}\frac{\mathrm{d}(\omega_i - \omega_{ce})}{\mathrm{d}t} - \frac{\omega_i - \omega_{ce}}{k_i^2}\frac{\mathrm{d}k_i}{\mathrm{d}t}~.
+    \end{aligned}
+\end{equation}
+The exact derivatives are given along the resonant trajectory, i.e.,
+\begin{equation}
+    \frac{\mathrm{d}}{\mathrm{d}t} \equiv \frac{\partial }{\partial t} + v_r \frac{\partial }{\partial s}~.
+\end{equation}
+For the frequency $\omega_i$, applying the identity
+\begin{equation}
+    \frac{\partial \omega_i}{\partial t} + v_g \frac{\partial \omega_i}{\partial s} = 0
+\end{equation}
+we have 
+\begin{equation}
+    \frac{\mathrm{d}\omega_i}{\mathrm{d}t} = \left(1-\frac{v_r}{v_g}\right) \frac{\partial \omega_i}{\partial t}~.
+\end{equation}
+For the derivative of wave number $k_i$, we additionally use
+\begin{equation}
+    \frac{\partial k_i}{\partial t} \equiv - \frac{\partial \omega_i}{\partial s},
+\end{equation}
+and have
+\begin{equation}
+    \frac{\mathrm{d}k_i}{\mathrm{d}t} = \frac{1}{v_g}\frac{\partial \omega_i}{\partial t} + v_r \frac{\partial k_i}{\partial s}~.
+\end{equation}
+The time derivative of gyrofrequency only depends on $s$, and
+\begin{equation}
+    \frac{\mathrm{d}\omega_{ce}}{\mathrm{d}t} = v_r \frac{\partial \omega_{ce}}{\partial s}~.
+\end{equation}
+Substituting back to equation (\ref{eq.alp0}), we have the final expression of $\alpha$
+\begin{equation}\label{eq.alp0.5}
+    \alpha \equiv \frac{1}{\omega_{b}^2}\left[\left(1 - 2\frac{v_r}{v_g}\right)\frac{\partial \omega_i}{\partial t}  -v_r^2 \frac{\partial k_i}{\partial s_i}+ \frac{\mathrm{\partial} \omega_{ce}}{\mathrm{\partial} s_{i}}\frac{k_i}{m_e}\mathcal{J}\right].
+\end{equation}
+With the introduced parameter, we can further organize the Hamiltonian as 
+\begin{equation}\label{eq.HamiltonianK2}
+    \begin{aligned}
+    H(s_i,\vartheta,\mathcal{J},\xi,\Omega) &= \frac{k_{i}^{2}\Omega^{2}}{2 m_{e}} + m_e \frac{\omega_b^2}{k_i^2} ( \cos \xi + \alpha \xi) 
+    \\
+    &+ \left[\left(\frac{\mathrm{d} k_{i}}{\mathrm{d} t}+\frac{\partial \omega_{ce}}{\partial s_{i}}\right) \Pi_{i}(t)+\frac{\partial \omega_{ce}}{\partial s_{i}} \mathcal{J}\right] \frac{\vartheta}{k_{i}}~,
+    \end{aligned}
+\end{equation}
+
+Now, the motion scales have been separated in above Hamiltonian.
+The first two terms in Eq.~(\ref{eq.HamiltonianK2}) describes the fast varying scale in the cell.
+The Hamiltonian composed a modified pendulum Hamiltonian system.
+The $\alpha$ term acts as a noninertial force stemming from background inhomogeneity.
+It includes the mirror force from inhomogeneous magnetic field and force from wave chirping.
+The parameter itself, is a dimensionless parameter representing the ratio of the inertial force and wave restoring force, i.e., the $\omega_b$.
+For the trapped particles, the ratio is from $-1$ to $1$.
+The sign of $\alpha$ indicates the orientation of the hole.
+When $\alpha = 0$, it is readily reduced to a simple pendulum Hamiltonian, which describes the particle oscillation in the wave potential well solely.
+If $|\alpha|$ approaches to 1, it indicates that the inertial force destroys the entire wave trapping, and invalidate the adiabatic theory.
+When $|\alpha|>1$, trapped particle would not exist.
+
+%--------- statement is not true for our work
+%The perturbation theory let us apply $J$ and $\vartheta$ obtained from the equilibrium Hamiltonian equation, i.e., the zeroth order solution, in the canonical equation of the perturbed Hamiltonian to calculate the variation of $\Omega$ and $\xi$.
+%On the contrary, the last term of Eq.~(\ref{eq.HamiltonianK2}) containing $\vartheta$ determines the evolution of momentum $\mathcal{J}$ along unperturbed particle orbit. The term mainly depends on the equilibrium parameters, and yields
+The last term of Eq.~(\ref{eq.HamiltonianK2}) containing $\vartheta$ which gives the evolution of momentum $\mathcal{J}$ from the canonical Hamiltonian equation,
+\begin{equation}\label{eq.m3}
+        \frac{d \mathcal{J}}{d t} =-\frac{\partial H_{i}}{\partial \vartheta}=\frac{1}{k_{i}(t)}\left[\left(\frac{d k_{i}}{d t}+\frac{d \omega_{c e}}{d s_{i}}\right) \Pi_{i}(t)+\frac{d \omega_{c e}}{d s_{i}} \mathcal{J}\right]~.
+\end{equation}
+%------------our work is different from the pertubation theory
+%and according to the perturbation theory, we can neglect the contribution from the perturbed Hamiltonian and have
+In fact, we can neglect the contribution from the perturbed Hamiltonian and have
+\begin{equation}\label{eq.m4}
+    \frac{d \vartheta}{d t} =\frac{\partial H_{i}}{\partial J} \approx \frac{d \omega_{c e}}{d s_{i}} \frac{\xi-\vartheta}{k_{i}(t)}=\frac{d \omega_{c e}}{d s_{i}}\left(s-s_{i}(t)\right)~.
+\end{equation}
+%the onset approximation, copy from cpc paper
+The canonical equation for the perturbed wave-particle interaction is then given as 
+\begin{equation}\label{eq.m1}
+    \frac{\mathrm{d}\Omega}{\mathrm{d}t} \equiv - \frac{\partial H_i}{\partial \xi} = m_e \frac{\omega_b^2}{k_i^2}\left(\sin \xi - \alpha \right)
+\end{equation}
+and the evolution of $\xi$ is 
+\begin{equation}\label{eq.m2}
+    \frac{\mathrm{d}\xi}{\mathrm{d}t} \equiv \frac{\partial H_i}{\partial \Omega} = \frac{\sqrt{2\omega_{ce}} }{\sqrt{m_e (J+\Omega+\Pi)}}\frac{e |a|}{c}(\cos \xi + \alpha \xi)~.
+\end{equation}
+Equations~(\ref{eq.m1})-(\ref{eq.m4}) gives the evolution of the dynamics system inside the cell and with the cell. 
+
+\subsection{The Vlasov equation and wave envelope on the cell}
+%The full form of the Vlasov equation
+According to the Hamiltonian theory for dynamics of the resonance particle on the cell reference frame, we are now able to construct the Vlasov and the wave envelope equations which self-consistently describes the interaction of the resonant particles with the slowly varying wave envelope and the evolution of the wave.
+
+The distribution function of resonant electrons is described separately on difference cells.
+Thus, the distribution function depends on the cell coordinate $s_i$.
+Besides, the dynamics concerning the angle variable $\vartheta$ in Eq.~(\ref{eq.m4}) can be neglected, since
+\begin{equation}
+   \frac{\mathrm{d} \omega_{ce}}{\mathrm{d} s_{i}}\left(s-s_{i}(t)\right) \ll \omega_b
+\end{equation}
+during the onset stage of the chorus emission.
+Thus, the distribution function depends on canonical variables $\mathcal{J}$,$\xi$, and $\Omega$ only, i.e., $f(s_i,\mathcal{J},\xi,\Omega)$.
+Combining the canonical Hamiltonian equations, we can directly write the Vlasov equation as 
+\begin{equation}\label{eq.vlasov}
+    %\frac{\partial f}{\partial t}+ \frac{d s_{i}}{d t} \frac{\partial f}{\partial s_{i}} - \frac{\partial H}{\partial \vartheta} \frac{\partial f}{\partial \mathcal{J}} + \frac{\partial H}{\partial \Omega} \frac{\partial f}{\partial \xi} - \frac{\partial H}{\partial \xi} \frac{\partial f}{\partial \Omega}=0~.
+    \frac{\partial f}{\partial t}+ \frac{d s_{i}}{d t} \frac{\partial f}{\partial s_{i}} - \frac{\mathrm{d} \mathcal{J}}{\mathrm{d}t} \frac{\partial f}{\partial \mathcal{J}} + \frac{\mathrm{d}\xi}{\mathrm{d} t} \frac{\partial f}{\partial \xi} - \frac{\mathrm{d}\Omega}{\mathrm{d} t} \frac{\partial f}{\partial \Omega}=0~.
+\end{equation}
+The time derivatives of $s_i$ is given according to the local resonant velocity,
+\begin{equation}
+    \frac{\mathrm{d}s_i}{\mathrm{d}t} = \frac{\omega_l- \omega_{ce}}{k_l}.
+\end{equation}
+The variation of $\mathcal{J}$ is obtained from equation (\ref{eq.Jcons}).
+The fast varying scale motions are given by equation (\ref{eq.m1}) and (\ref{eq.m2}) with simplified $\alpha$ in equation (\ref{eq.alp1}).
+\if(0)
+We can model the phase space dynamics by the $\delta f$ method, where the distribution is divided into equilibrium and perturbed parts $f = f_0 + \delta f$. The $f_0$ is the equilibrium distribution function satisfies $\partial f_0 /\partial t = 0$, it is also unchanged along the unperturbed particle trajectory determined from the unperturbed Hamiltonian, i.e.,
+\begin{equation}
+    \frac{d s_{i}}{d t} \frac{\partial f_0}{\partial s_{i}} - \frac{\partial H_0}{\partial \vartheta} \frac{\partial f_0}{\partial \mathcal{J}} + \frac{\partial H_0}{\partial \Omega} \frac{\partial f_0}{\partial \xi} - \frac{\partial H_0}{\partial \xi} \frac{\partial f_0}{\partial \Omega}=0~,
+\end{equation}
+where $H_0 = H^f + H^s$.
+Applying these condition, the Vlasov equation concerning $\delta f$ is
+\begin{equation}\label{eq.deltaf}
+    \frac{\partial \delta f}{\partial t}+ \frac{d s_{i}}{d t} \frac{\partial \delta f}{\partial s_{i}} - \frac{\partial H}{\partial \vartheta} \frac{\partial \delta f}{\partial \mathcal{J}} + \frac{\partial H}{\partial \Omega} \frac{\partial \delta f}{\partial \xi} - \frac{\partial H}{\partial \xi} \frac{\partial \delta f}{\partial \Omega} = S~,
+\end{equation}
+where $S$ is the source term contains the derivative of $f_0$,
+\begin{equation}
+    S = \frac{\partial H^p}{\partial \xi} \frac{\partial f_0}{\partial \Omega}  + \frac{\partial H^p}{\partial \Omega} \frac{\partial f_0}{\partial \xi}~.
+\end{equation}
+\fi
+%The separation of the temporal and spatial scales spontaneously appears in the distribution function $f_i(\xi, \Omega, J; s_i, t)$ due to the local canonical transformation we choose, where the canonical coordinate $\xi$ is the fast varying variable carrying with the wave fluctuations and $s_i(t)$ is the slowly varying variable carrying with the wave envelope during the wave-particle interaction. The equilibrium distribution function is obtained from the adiabatic invariants $\mu$ and $J_{B}$.
+
+%Wave
+\subsection{The wave envelope equation}
+The whistler waves are excited from the background cold plasma, where the plasma density and the magnetic field determines the cold whistler-mode wave numbers and frequencies. The waves then being driven unstably by energetic electrons, and from which the most unstable wave with wave number $k_l$ and frequency $\omega_l$ could arise from the noise level. The wave is considered to be fully electromagnetic, i.e., $E \perp k$ and $B \perp k$, and has a pure circular polarization, thus all field components are presented in complex form, where the real and imaginary parts denote the x-axis direction and y-axis direction of the plane perpendicular to $B_0$. In the following discussion, the wave vector potential and current are represented in complex form to indicate the circular vectors, i.e., $a = a_x + \imath a_y$ and $j = j_x + \imath j_y$.
+
+The evolution of whistler wave is governed by the Ampere's law, 
+\begin{equation}
+    \begin{aligned}
+        \label{eq.wavemid_1}
+        \frac{1}{c^{2}} \frac{\partial^{2} A}{\partial t^{2}}-\frac{\partial^{2} A}{\partial s^{2}} & =\frac{4 \pi}{c}\left(j_w+j_p\right)
+    \end{aligned}
+\end{equation}
+where the current includes the linear current $j_w$ from bulk cold plasma and the current $j_p$ from energetic electrons.
+
+%the cell variabel
+Similar to the Hamiltonian on the cell in Eq. (\ref{eq.kernel_H}), applying the phase expansion, we can write the wave potential in Eq. (\ref{eq.def_A}) as envelope form,
+\begin{equation}\label{eq.kernel_A}
+    \begin{aligned}
+    A(s,t) &\equiv \int_{-\infty}^{\infty}\mathrm{d} q~ A\left(q,t\right) \exp(\imath\phi_{q})
+    \\
+    & \simeq e^{\imath \phi_f} \int_{-\infty}^{\infty}\mathrm{d} q~ A\left(q,t\right) \exp(\imath\phi_{s})
+    \\
+    %& \simeq e^{-\imath (\xi-\varphi)}  a(s_i, t)~,
+    & \simeq e^{\imath \phi_f}  a(s_i, t)~,
+    \end{aligned}
+\end{equation}
+where $a(s_i, t) \equiv \int_{-\infty}^{\infty} \mathrm{d} q~A(q, t) e^{\imath \phi_{s}}$ is the slowly varying wave envelope.
+
+Substituting equation (\ref{eq.kernel_A}) into the wave equation (\ref{eq.wavemid_1}), we have 
+\begin{equation}
+    \begin{aligned}
+    \frac{\partial^2  A}{\partial t^2} &= \frac{\partial }{\partial t}\left(\frac{\partial }{\partial t}(a e^{\imath \phi_f})\right) = \frac{\partial }{\partial t}\left(\frac{\partial a}{\partial t} e^{\imath \phi_f} + \imath a \frac{\partial \phi_f}{\partial t}e^{\imath \phi_f} \right)
+    \\
+    & = \frac{\partial^2 a}{\partial t^2} e^{\imath \phi_f} + \frac{\partial a}{\partial t} (\imath \frac{\partial \phi_f}{\partial t} e^{\imath \phi_f}) +
+     \imath \left(\frac{\partial a}{\partial t} \frac{\partial \phi_f}{\partial t}e^{\imath \phi_f} + a \frac{\partial ^2 \phi_f}{\partial t^2}e^{\imath \phi_f} + \imath a \left(\frac{\partial \phi_f}{\partial t}\right)^2e^{\imath \phi_f}  \right)
+     \\
+     & = e^{\imath \phi_f} \left(\frac{\partial^2 a}{\partial t^2} + 2 \imath \frac{\partial a}{\partial t}\frac{\partial \phi_f}{\partial t} + \imath a \frac{\partial^2 \phi_f}{\partial t^2} - a \left(\frac{\partial \phi_f}{\partial t}\right)^2\right)
+    \end{aligned}
+\end{equation}
+Similarly, the second order derivative of $A$ with respect to $s$ is 
+\begin{equation}
+    \frac{\partial^2  A}{\partial s^2} = e^{\imath \phi_f} \left(\frac{\partial^2 a}{\partial s^2} + 2 \imath \frac{\partial a}{\partial s}\frac{\partial \phi_f}{\partial s} + \imath a \frac{\partial^2 \phi_f}{\partial s^2} - a \left(\frac{\partial \phi_f}{\partial s}\right)^2\right)
+\end{equation}
+
+According to the definition of fast varying phase in equation (\ref{eq.phi_fs}), we obtained its first order derivative as
+\begin{equation}
+    \begin{aligned}
+    \frac{\partial \phi_f}{\partial t} & = \omega_{ce}(s_i(t)) - \frac{\partial k_i(t)}{\partial t}(s-s_i(t)) + k_i v_i
+    \\
+    & = \omega_i - \frac{\partial k_i(t)}{\partial t}(s-s_i(t))
+    \\
+    &\simeq \omega_i~,
+    \end{aligned}
+\end{equation}
+and the spatial derivative is 
+\begin{equation}
+    \frac{\partial \phi_f}{\partial s} \simeq - k_i~.
+\end{equation}
+While the second order derivative of the phase is vanished.
+Therefore, the left-hand-side of the wave equation is 
+\begin{equation}
+    \mathrm{L} = e^{\imath \phi_f} \left(\frac{1}{c^2}\frac{\partial^2 a}{\partial t^2} - \frac{\partial^2 a}{\partial s^2} + \frac{2 \imath \omega_i}{c^2} \frac{\partial a}{\partial t}+ 2 \imath k_i \frac{\partial a}{\partial s} + (k_i^2 - \frac{\omega_i^2}{c^2})a\right)
+\end{equation}
+
+For the right-hand-side of the wave equation, we first deal with the linear current $j_w$, with regard to the high frequency whistler mode, the ion is too heavy to respond the wave perturbation, thus $j_w$ can be derived from the equation of motion of cold electrons \cite{stix1992},
+\begin{equation}
+    \frac{\partial j_w}{\partial t}-\imath \omega_{c e}(s) j_w=-\frac{\omega_{p}^{2}(s)}{4 \pi c} \frac{\partial A}{\partial t}
+\end{equation}
+where $\omega_{p}$ is the plasma frequency of background electrons.
+The general solution of the above first order inhomogeneous differential equation is
+\begin{equation}
+    j_w(t) = \mathrm{C} e^{\imath \omega_{ce}(s)t} + e^{\imath \omega_{ce}(s)t} \int_0^t - \frac{\omega_{p}^2}{4 \pi c} \frac{\partial A}{\partial \tau} e^{-\imath \omega_{ce}(s)\tau} \mathrm{d} \tau  ~.
+\end{equation}
+Apply the initial condition $j_w(t=0) = 0$, the constant is vanished in the general solution, and gives the linear current as,
+\begin{equation}
+    \label{eq.jw}
+    j_w =-\frac{\omega_{p}^{2}(s)}{4 \pi c} \int_0^{t} \mathrm{d} \tau \frac{\partial A}{\partial \tau} e^{\imath \omega_{c e}(s)(t-\tau)}~.
+\end{equation}
+Also substituting the envelope form in Eq. (\ref{eq.kernel_A}) into the above equation, we have
+\begin{equation}
+    j_w = -\frac{\omega_p^2(s)}{4 \pi c}\int_0^t \mathrm{d} \tau \left(\frac{\partial a}{\partial \tau} + \imath \omega_i(\tau) a\right)e^{\imath \phi_f(s,\tau)} e^{\imath \omega_{ce}(t-\tau)}~.
+\end{equation}
+The last term can be approximately written as
+\begin{equation}
+    e^{\imath \omega_{ce}(t-\tau)} \simeq e^{\imath \int^\tau_t \omega_{ce}(s_i(\tau^\prime))\mathrm{d}\tau^\prime}
+\end{equation}
+As to the fast varying phase $\phi_f(s,\tau)$, similar to the wave eikonal, we can write it approximately as, 
+%\begin{equation}
+%    \begin{aligned}
+%    \phi_f(s,\tau) &= \int^\tau \omega_{ce}(s_i(\tau^\prime))\mathrm{d}\tau^\prime - k_i(\tau)(s-s_i(\tau))
+%    \\
+%    & = \int^t \omega_{ce}(s_i(\tau))\mathrm{d}\tau + \int_t^\tau \omega_{ce}(s_i(\tau^\prime))\mathrm{d}\tau^\prime 
+%    \\
+%    & - k_i(t)(s-s_i(t)) + k_i(t)(s-s_i(t)) - k_i(\tau)(s-s_i(\tau))
+%    \\
+%    & = \phi_f(s,t) + \int_t^\tau \omega_{ce}(s_i(\tau^\prime))\mathrm{d}\tau^\prime + k_i(t)(s-s_i(t)) - k_i(\tau)(s-s_i(\tau))
+%    & = \phi_f(s,t) + \int_t^\tau \omega_{ce}(s_i(\tau^\prime))\mathrm{d}\tau^\prime + s (k_i(t)-k_i(\tau)) - (k_i(t)s_i(t) - k_i(\tau)s_i(\tau))
+%    \\
+%    & = \phi_f(s,t) + \int_t^\tau \omega_{ce}(s_i(\tau^\prime))\mathrm{d}\tau^\prime + \int_t^\tau - s \frac{\partial k_i}{\partial \tau^\prime} \frac{\partial k_i s_i}{\partial \tau^\prime}\mathrm{d}\tau^\prime
+%    \\
+%    & = \phi_f(s,t) + \int_t^\tau \omega_{ce}(s_i(\tau^\prime))\mathrm{d}\tau^\prime + \int_t^\tau - s \frac{\partial k_i}{\partial \tau^\prime} s_i\frac{\partial k_i}{\partial \tau^\prime}+ k_i\frac{\partial s_i}{\partial \tau^\prime} \mathrm{d}\tau^\prime
+%    \end{aligned}
+%\end{equation}
+%We neglect the second order term $(s_i -s)\partial k_i \partial \tau$ in the above equation, thus the phase becomes
+%\begin{equation}
+%    \begin{aligned}
+%    \phi_f(s,\tau) &\simeq \phi_f(s,t) + \int_t^\tau \omega_{ce}(s_i(\tau^\prime))\mathrm{d}\tau^\prime + \int_t^\tau  k_i\frac{\partial s_i}{\partial \tau^\prime}\mathrm{d}\tau^\prime
+%    \\
+%    & = \phi_f(s,t) + \int_t^\tau \omega_{ce}(s_i(\tau^\prime))  k_i v_i\mathrm{d}\tau^\prime
+%    \\
+%    &=\phi_f(s,t) + \int_t^\tau \omega_{i}(k_i(\tau^\prime),\tau^\prime) \mathrm{d}\tau^\prime
+%    \end{aligned}
+%\end{equation}
+\begin{equation}
+    \phi_f(s,\tau) =\phi_f(s,t) + \int_t^\tau \omega_{i}(k_i(\tau^\prime),\tau^\prime) \mathrm{d}\tau^\prime
+\end{equation}
+Thus, the linear current $j_w$ becomes
+\begin{equation}
+    j_w = -\frac{\omega_p^2(s)}{4 \pi c}\int_0^t \mathrm{d} \tau \left(\frac{\partial a}{\partial \tau} + \imath \omega_i(\tau) a\right)e^{\imath \int_t^\tau (\omega_i(k_i(\tau^\prime),\tau^\prime)) - \omega_{ce}(s_i(\tau^\prime))\mathrm{d}\tau^\prime}~.
+\end{equation}
+For the integral with the zeroth order derivative of $a$, we can use integration by parts, where
+\begin{equation}
+    \begin{aligned}
+    &\int_0^t  \frac{\omega_i(\tau) a}{\omega_i(k_i(\tau),\tau) - \omega_{ce}(s_i(\tau))} \mathrm{d}e^{\imath \int_t^\tau (\omega_i(k_i(\tau^\prime),\tau^\prime)) - \omega_{ce}(s_i(\tau^\prime))} \simeq \frac{\omega_i(\tau) a}{\omega_i(k_i(\tau),\tau) - \omega_{ce}(s_i(\tau))} -
+    \\
+    &\int_0^t \frac{\omega_i(\tau)}{\omega_i(k_i(\tau),\tau) - \omega_{ce}(s_i(\tau))} \frac{\partial a}{\partial \tau} e^{\imath \int_t^\tau (\omega_i(k_i(\tau^\prime),\tau^\prime)) - \omega_{ce}(s_i(\tau^\prime))}\mathrm{d} \tau ~.
+    \end{aligned}
+\end{equation}
+Substituting back we have
+\begin{equation}
+    \begin{aligned}
+    & \frac{1}{c^2} \frac{\partial^2 a}{\partial t^2}-\frac{\partial^2 a}{\partial s_i^2}+\frac{2 \imath \omega_i}{c^2} \frac{\partial a}{\partial t}+2 \imath k_i \frac{\partial a}{\partial s_i}+\left(k_i^2(t)-\frac{\omega_i^2}{c^2}+\frac{\omega_p^2\left(s_i\right) \omega_i}{c^2\left(\omega_i-\omega_{c e}\right)}\right) a \\
+    & +\frac{\omega_p^2\left(s_i(t)\right)}{c^2} \int_0^t d \tau \frac{\omega_{c e}\left(s_i(\tau)\right)}{\omega_{c e}\left(s_i(\tau)\right)-\omega_i\left(k_i(\tau), \tau\right)} \frac{\partial a}{\partial \tau} e^{-\imath \int_\tau^t\left(\omega_i\left(k_i\left(\tau^{\prime}\right), \tau^{\prime}\right)-\omega_{c e}\left(s_i\left(\tau^{\prime}\right)\right)\right) d \tau^{\prime}} =\frac{4\pi}{c} j_{p}.
+    \end{aligned}
+\end{equation}
+
+Note that the linear current term has been analytic merged on the left-hand-side, and the right only contains the current term from energetic particle. It can be obtained through the integration over the phase space in the vicinity of the resonances of the perturbed distribution functions, i.e.,
+\begin{equation}
+    j_p(s, t)=-e n_{h 0} \iiint f\left(s, p_{\parallel}, \mu, \varphi ; t\right) \sqrt{\frac{2 \omega_{ce} \mu}{m_{e}}} e^{\imath \varphi} d p_{\parallel} d \mu d \varphi~,
+\end{equation}
+Since the determinant of the Jacobian matrix of the canonical variables is 
+\begin{equation}
+    \frac{\partial (p_\|,\mu,\varphi)}{\partial (\xi,\Omega,\mathcal{J})} = \frac{1}{k}~,
+\end{equation}
+Besides, similar to the slowly varying kernel in Eq. (\ref{eq.kernel_A}), the current envelope on the cell is
+\begin{equation}
+j_{p}(s_i,t) = \exp(\imath(\xi-\varphi))j_{p}(s,t)~,
+\end{equation}
+which gives
+\begin{equation}\label{eq.nonlinear_J}
+    j_p(s_i,t) = - \frac{\omega_{h0}^2k_i(t)}{4\pi e}\iiint \sqrt{2m_e\omega_{ce}(s)(\mathcal{J}+\Omega+\Pi_i(t))}f(\xi,\Omega,\mathcal{J};s_i(t),t)e^{\imath \xi} \rm d \xi \rm d \Omega \rm d \mathcal{J}~,
+\end{equation}
+where $\omega^2_{h0} = 4 \pi n_{h0} e^2 /m_e$ is the plasma frequency of the energetic electrons.
+
+Using the onset condition, i.e., set the frame center at the most unstable frequency $\omega_l$ we have the final second order reduced equation of the wave envelope, 
+\begin{equation}
+    \begin{aligned}
+    \frac{1}{c^2}\frac{\partial^2 a}{\partial t^2} - \frac{\partial^2 a}{\partial s_i^2} + \frac{2\imath\omega_l}{c^2}\frac{\partial a}{\partial t} + 2\imath k_l\frac{\partial a}{\partial s_i} + \frac{\omega_p^2 \omega_{c e}}{c^2(\omega_{c e}-\omega_l)} \int_0^t d \tau \frac{\partial a}{\partial \tau} e^{-\imath\left(\omega_l-\omega_{c e}\right)(t-\tau)} = 
+    \\
+    - \frac{\omega_{h0}^2k_l}{ec}\iiint \sqrt{2m_e\omega_{ce}(s)(\mathcal{J}+\Omega+\Pi_i(t))}f(\xi,\Omega,\mathcal{J};s_i(t),t)e^{\imath \xi} \rm d \xi \rm d \Omega \rm d \mathcal{J}~.    
+\end{aligned}
+  \end{equation}
+
+\if{0}
+Moreover, the integral can be further reduced using integration by parts, 
+\begin{equation}
+    \begin{aligned}
+    \int_0^t d \tau \frac{\omega_{c e}\left(s_i(\tau)\right)}{\omega_{c e}\left(s_i(\tau)\right)-\omega_i\left(k_i(\tau), \tau\right)} \frac{\partial a}{\partial \tau} e^{-\imath \int_\tau^t\left(\omega_i\left(k_i\left(\tau^{\prime}\right), \tau^{\prime}\right)-\omega_{c e}\left(s_i\left(\tau^{\prime}\right)\right)\right) d \tau^{\prime}} \\
+    = 
+\end{aligned}
+\end{equation}
+
+\begin{equation}
+\begin{aligned}
+    \int^{t} d \tau \frac{\partial a}{\partial \tau} e^{-\imath\left(\omega_{l}-\omega_{c e}\right)(t-\tau)}
+    &=\int^{t}\frac{\partial a}{\partial\tau} \frac{1}{\imath\left(\omega_l-\omega_{ce}\right)}d e^{-\imath\left(\omega_l-\omega_{ce}\right)\left(t-\tau\right)}
+    \\
+    &=\left.\frac{\partial a}{\partial \tau}\frac{e^{-\imath\left(\omega_l-\omega_{ce}\right)\left(t-\tau\right)}}{\imath\left(\omega_l-\omega_{ce}\right)}\right|^{t}_{0} - \int^{t} \frac{e^{-\imath\left(\omega_l-\omega_{ce}\right)\left(t-\tau\right)}}{\imath\left(\omega_l-\omega_{ce}\right)}d \frac{\partial a}{\partial\tau}~,
+    \end{aligned}
+\end{equation}
+and neglect the second order derivative of $a$ in the second term of above equation, i.e., only keeps the first order linear term. The first term vanishes when $\tau = 0$, while left $\frac{\partial a}{\partial t}/\imath\left(\omega_{l}-\omega_{ce}\right)$ for $\tau = t$. Besides, the second integral can be ignored since the high order term on frequency difference. After some simple algebra, we can get a linear advection equation of $a$,
+\begin{equation}
+    \label{eq.adv}
+    \frac{\partial a}{\partial t} +v_g \frac{\partial a}{\partial s} =\frac{\imath v_g \omega_{h 0}^{2}}{2} j_p
+\end{equation}
+Both the full second-order wave equation and the simplified advection equation are applied in our simulations shown below.
+
+
+Substituting $A(s,t)$ and $j_p$ back into equation (\ref{eq.wavemid_1}), we have the final second order nonlinear equation of whistler-mode waves,
+
+%The detailed derivation is given in appendix~\ref{ap.wave}
+%How to solve in the framework/groundwork above
+
+
+
+As to the wave evolution, we first employ the general wave equation according to the Ampere's law,
+\begin{equation}\label{eq.ori_wave}
+    \nabla \times \left(\nabla \times \mathbf{A} \right) = -\frac{1}{c^2} \frac{\partial^2\mathbf{A}}{\partial t^2}  + \frac{4\pi}{c}\mathbf{J}~,
+\end{equation}
+Substituting Eq. (\ref{eq.kernel_A}) into the above wave equation, we can obtain the equation for the slowly-varying kernel,
+%\left(\mathbf{k}_i \mathbf{k}_i + k_i^2 \bfI +\frac{\omega_i^2}{c^2} \epsilon\right) \mathbf{a}_i
+\begin{equation}\label{eq.W2nd}
+    -\nabla^2\mathbf{A} + \frac{1}{c^2} \frac{\partial^2 \mathbf{A}}{\partial t^2} + \frac{2\imath \omega}{c^2} \frac{\partial \mathbf{A}}{\partial t} - 2 \imath\left(k \cdot \nabla\right) \mathbf{A}+\imath\left(\nabla \cdot \mathbf{A}\right) \mathbf{k}+\imath \nabla \mathbf{A}\cdot \mathbf{k} = \frac{4 \pi}{c} \mathbf{J}
+\end{equation}
+The current $\mathbf{J} $ contains the linear plasma current and the current $\mathbf{J}_p$ from energetic partilces.
+
+
+We can also directly apply the slowly-varying envelope approximation. It assumes the wave has a narrow spectrum and a corresponding slowly-varying envelope, and reduces the wave equation in terms of the slowly-varying kernel as well,
+\begin{equation}\label{eq.W1st}
+    \frac{\partial\mathbf{A}}{\partial t} + v_g \frac{\partial\mathbf{A}}{\partial s} = \left[\frac{\partial\mathcal{D}}{\partial \omega}\right]^{-1}\cdot \mathbf{J}_p(s_i,t)~,
+\end{equation}
+where $v_g$ is the group velocity and $\mathcal{D}$ is the plasma dispersion tensor.
+
+Note that, the above original equations are written in Gaussian unit, and we use electron mass $m_e$, electron charge $e$, speed of light $c$ and background electron plasma frequency $\omega_{p0}$ to normalize mass, charge, velocity, and time. Other units for quantities like $\mathcal{J}$ and vector potential $A$ can be derived from the related governing equations, as:
+\begin{equation}
+    [A]: \frac{m_e c^2}{e}, \quad[J]: \frac{m_e c^2}{\omega_{p 0}}~.
+\end{equation}
+The physical constants are now eliminated in the normalized equations.
+
+\fi
