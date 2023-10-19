@@ -13,9 +13,9 @@ where $\omega$ is the wave frequency, $s$ is the coordinates along the field lin
 Here, we concern with the resonant interactions along a one-dimensional magnetic field line, thus $s$ and $q$ are in scalar form, for simplicity.
 \subsection{The local Hamiltonian theory}
 %PART II: THE HAMILTONIAN
-Considering the perturbed wave field is much smaller than the background field, we can treat the system perturbatively as the equilibrium part and the perturbed part.
+Considering the perturbed wave field is much smaller than the background field, we can treat the system as the equilibrium part and the perturbed part.
 The former describes the particle motion in a slowly-varying magnetic field, and it is typically associated with three adiabatic invariants associated with the unperturbed equilibrium, namely the magnetic moment, the longitudinal invariant, and the flux invariants.
-They correspond to the gyromotion, the mirror bounce motion, and the drift motion perpendicular to the magnetic field.
+They correspond to the gyro motion, the mirror bounce motion, and the drift motion perpendicular to the magnetic field.
 Since the timescale of perpendicular drift motion is very slow compare to the time period of the wave instabilities, we can neglect drift motion, and leave the equilibrium Hamiltonian as
 \begin{equation}
     H_0(\varphi,\mu;s,p_\|) =  \frac{p_\|^2}{2 m_e} + \mu \omega_{ce}(s)~,
@@ -25,7 +25,7 @@ While the latter describes the interaction with the banded wave, and the Hamilto
 \begin{equation}\label{eq.def_H}
     \delta H(\varphi,\mu; s,p_\|;t) = \frac{1}{2}\left(\int_{-\infty}^{\infty} \mathrm{d} q~{\delta H}\left(\mu, p_\|, q ; t\right) e^{\imath\left(\phi_{q}-\varphi\right)}+ \mathrm{c.c}\right)~,
 \end{equation}
-where $\phi_q - \varphi$ is the difference between the wave angle and the gyroangel.
+where $\phi_q - \varphi$ is the difference between the wave angle and the gyro angel.
 Note that the perturbed field is much less than the equilibrium field, we still regard $s$ and $\phi$ as canonical coordinates, and $p_\parallel$ and $\mu$ as canonical momentum for the total Hamiltonian.
 
 %Why we have to study the Hamiltonian on the cell
@@ -35,12 +35,16 @@ Note that the perturbed field is much less than the equilibrium field, we still 
 %\subsubsection{The expansion of the phase on the cell}
 %The expansion of phi on the cell
 The wave form and the Hamiltonian in Eqs. (\ref{eq.def_A}) and (\ref{eq.def_H}) involves wave phase $\phi_q$ and the particle gyro phase $\varphi$. Both of them change fast in the laboratory frame of reference. While the wave-particle interaction scale and the adiabatic motion scales in the equilibrium magnetic field are considerable slower. 
-We here example several typical motion scales and their characteristic time and length. There has wave oscillation scale, as in frequency $\omega$ and wavenumber $k$; particle gyration scale, as in $\omega_\mathrm{ce}$; wave trapped particle bounce frequency $\omega_\mathrm{b}$; wave chirping scale, as in $\dot{\omega}/\omega$, $\nabla k/k$, and $\nabla a/a$; background spatial nonuniformity scale, as in $\nabla B/B$; particle parallel bouncing scale $\omega_B$ and $L_\mathrm{B}$; particle transverse drift scale, as in $\omega_D$ and $L_\mathrm{d}$. 
+We here example several typical motion scales and their characteristic time and length. 
+There has wave oscillation scale, as in frequency $\omega$ and wavenumber $k$;
+energetic particle gyration scale, as in gyro frequency $\omega_\mathrm{ce}$ and gyro radius $r_{ce}$;
+wave trapped particle bounce frequency $\omega_\mathrm{b}$; wave chirping scale, as in $\dot{\omega}/\omega$, $\nabla k/k$, and $\nabla a/a$; background spatial nonuniformity scale, as in $\nabla B/B$; particle parallel bouncing scale $\omega_B$ and $L_\mathrm{B}$; particle transverse drift scale, as in $\omega_D$ and $L_\mathrm{d}$. 
 For the chorus wave in the Earth's dipole field, the relations of the characteristic scales are
 \begin{equation}
     \begin{aligned}
-        \omega_\mathrm{ce} \sim \omega \gg \omega_\mathrm{b} \sim \dot\omega/\omega  \gg \omega_\mathrm{B} \gg \omega_\mathrm{d}~,\\
-        k \gg \nabla k/k\sim \nabla a/a \gg \nabla B/B \sim L_\mathrm{B}^{-1} \gg L_\mathrm{d}^{-1}~.
+        &\omega_\mathrm{ce} \sim \omega >  \omega_\mathrm{b} \gg \dot\omega/\omega  \gg \omega_\mathrm{B} \gg \omega_\mathrm{d}~,
+        \\
+        &r^{-1}_{ce} \sim k \gg \nabla k/k\sim \nabla a/a \gg \nabla B/B \sim L_\mathrm{B}^{-1} \gg L_\mathrm{d}^{-1}~.
     \end{aligned}
 \end{equation}
 The last scale corresponds to the third adiabatic invariant, which is well-conserved in our studies. 

@@ -65,10 +65,10 @@ The constant for each cell is determined by the initial choice of $\mathcal{J}$,
 
 \subsection{The adiabatic theory}
 %solve current integral and obtain the chirping law
-In the previous section, we have shown the nonlinear current as the velocity momentum of perturbed distribution function. 
-The current dominates the nonlinear behavior of the chorus chirping process, and under certain condition, we can simplify the integral and show qualitatively how does the frequency chirp.
-The distribution function of the trapped electrons forms a hole in the phase space at the nonlinear stage, and we consider the deviation from the unperturbed distribution $\Delta f$, i.e., the depth of the hole.
-The nonlinear current is directly determined by $\Delta f$, since the equilibrium distribution does not contribute the current.
+In the previous section, we obtain the nonlinear current from the velocity momentum of perturbed distribution function. 
+The current dominates the nonlinear behavior of the chorus chirping process, and under certain condition, we can simplify the phase space integral and show qualitatively how does the current forms.
+At the nonlinear stage, the distribution function of the trapped electrons forms a hole in the phase space, and we consider the deviation from the unperturbed distribution $\Delta f$, i.e., the depth of the hole.
+Since the equilibrium distribution does not contribute to the current, the nonlinear current is directly determined by $\Delta f$, 
 
 %the adiabatic invariant 
 For those electrons trapped by the slowly varying wave envelope and circling around in the phase space, we can define the adiabatic invariant at a given $s_i,\mathcal{J}$,
@@ -93,12 +93,15 @@ Thus the current integral becomes
 \begin{equation}
     j_p(s_i,t) \approx -  {2\pi \tau} \sqrt{2m_e\omega_{ce}(s)(\mathcal{J} + \Pi_i(t))}\int\mathrm{d} \mathcal{J} \int_0^{I_{\mathrm{s p x}}}\mathrm{d}\mathcal{I}  \langle \Delta f(s_i,\mathcal{J},\mathcal{I},\xi,t)e^{\imath \xi} \rangle  ~.
 \end{equation}
-For the slowly varying wave field, $\Delta f$ can be expanded in powers of small scale $\epsilon$ satisfies condition \cite{berk1999}
+
+For the adiabatic regime, the characteristic scales should vary considerably slowly compared to the wave trapping scale.
+There exists a small scale $\epsilon$ satisfies condition \cite{berk1999}
 \begin{equation}
-    %\left[\left|\frac{\mathrm{d} \omega_b}{\mathrm{~d} t}\right|,\left|\frac{\mathrm{d} \omega}{\mathrm{d} t}\right|\right] \ll \omega_b^2,
-    \epsilon \equiv \mathrm{s p x}\left(\ddot{\delta \omega}/\omega_b^3, \dot{\delta \omega}/\omega_b^2, \omega_b/\delta \omega \right) \ll 1~,
+    \epsilon \equiv \mathrm{max}\left(\ddot{ \omega}/\omega_b^3, \dot{\omega}/\omega_b^2, \omega_b/\omega \right) \ll 1~,
 \end{equation}
-and follows the derivation in ref. \cite{berk1999}, we keep to the first order term, the average integrals are
+Here, $\omega$ in our context represents the deviation from $\omega_l$.
+For the chorus wave field, the frequency, and other quantities change slowly in one bounce period, satisfying the first and the second inequalities. The last term requires the frequency has chirped a notable distance, i.e., the nonlinear stage, where the hole has been separated from the equilibrium.
+$\Delta f$ can be expanded in powers of $\epsilon$ and follows the derivation in ref. \cite{berk1999}, we keep to the first order term, the average integrals are
 \begin{equation}
     \begin{aligned}
     \langle\Delta f \sin \xi \rangle &\simeq \alpha \Delta f_0 ~, \\ 
