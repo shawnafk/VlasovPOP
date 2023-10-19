@@ -354,21 +354,7 @@ The time derivatives of $s_i$ is given according to the local resonant velocity,
 \end{equation}
 The variation of $\mathcal{J}$ is obtained from equation (\ref{eq.Jcons}).
 The fast varying scale motions are given by equation (\ref{eq.m1}) and (\ref{eq.m2}) with simplified $\alpha$ in equation (\ref{eq.alp1}).
-\if(0)
-We can model the phase space dynamics by the $\delta f$ method, where the distribution is divided into equilibrium and perturbed parts $f = f_0 + \delta f$. The $f_0$ is the equilibrium distribution function satisfies $\partial f_0 /\partial t = 0$, it is also unchanged along the unperturbed particle trajectory determined from the unperturbed Hamiltonian, i.e.,
-\begin{equation}
-    \frac{d s_{i}}{d t} \frac{\partial f_0}{\partial s_{i}} - \frac{\partial H_0}{\partial \vartheta} \frac{\partial f_0}{\partial \mathcal{J}} + \frac{\partial H_0}{\partial \Omega} \frac{\partial f_0}{\partial \xi} - \frac{\partial H_0}{\partial \xi} \frac{\partial f_0}{\partial \Omega}=0~,
-\end{equation}
-where $H_0 = H^f + H^s$.
-Applying these condition, the Vlasov equation concerning $\delta f$ is
-\begin{equation}\label{eq.deltaf}
-    \frac{\partial \delta f}{\partial t}+ \frac{d s_{i}}{d t} \frac{\partial \delta f}{\partial s_{i}} - \frac{\partial H}{\partial \vartheta} \frac{\partial \delta f}{\partial \mathcal{J}} + \frac{\partial H}{\partial \Omega} \frac{\partial \delta f}{\partial \xi} - \frac{\partial H}{\partial \xi} \frac{\partial \delta f}{\partial \Omega} = S~,
-\end{equation}
-where $S$ is the source term contains the derivative of $f_0$,
-\begin{equation}
-    S = \frac{\partial H^p}{\partial \xi} \frac{\partial f_0}{\partial \Omega}  + \frac{\partial H^p}{\partial \Omega} \frac{\partial f_0}{\partial \xi}~.
-\end{equation}
-\fi
+
 %The separation of the temporal and spatial scales spontaneously appears in the distribution function $f_i(\xi, \Omega, J; s_i, t)$ due to the local canonical transformation we choose, where the canonical coordinate $\xi$ is the fast varying variable carrying with the wave fluctuations and $s_i(t)$ is the slowly varying variable carrying with the wave envelope during the wave-particle interaction. The equilibrium distribution function is obtained from the adiabatic invariants $\mu$ and $J_{B}$.
 
 %Wave
@@ -525,10 +511,30 @@ which gives
 where $\omega^2_{h0} = 4 \pi n_{h0} e^2 /m_e$ is the plasma frequency of the energetic electrons.
 
 Using the onset condition, i.e., set the frame center at the most unstable frequency $\omega_l$ we have the final second order reduced equation of the wave envelope, 
-\begin{equation}
+\begin{equation}\label{eq.wave_2nd}
     \begin{aligned}
     \frac{1}{c^2}\frac{\partial^2 a}{\partial t^2} - \frac{\partial^2 a}{\partial s_i^2} + \frac{2\imath\omega_l}{c^2}\frac{\partial a}{\partial t} + 2\imath k_l\frac{\partial a}{\partial s_i} + \frac{\omega_p^2 \omega_{c e}}{c^2(\omega_{c e}-\omega_l)} \int_0^t d \tau \frac{\partial a}{\partial \tau} e^{-\imath\left(\omega_l-\omega_{c e}\right)(t-\tau)} = 
     \\
     - \frac{\omega_{h0}^2k_l}{ec}\iiint \sqrt{2m_e\omega_{ce}(s)(\mathcal{J}+\Omega+\Pi_i(t))}f(\xi,\Omega,\mathcal{J};s_i(t),t)e^{\imath \xi} \rm d \xi \rm d \Omega \rm d \mathcal{J}~.    
     \end{aligned}
 \end{equation}
+
+%first order wave equations
+For the slowly varying envelope, the second order time and spatial derivatives for the amplitude it generally small. Thus we further neglect these terms in the wave equation above.
+Moreover, the integral in the equation can be further simplified using integration by parts, 
+\begin{equation}
+\begin{aligned}
+\int^{t} d \tau \frac{\partial a}{\partial \tau} e^{-\imath\left(\omega_{l}-\omega_{c e}\right)(t-\tau)}
+    &=\int^{t}\frac{\partial a}{\partial\tau} \frac{1}{\imath\left(\omega_l-\omega_{ce}\right)}d e^{-\imath\left(\omega_l-\omega_{ce}\right)\left(t-\tau\right)}
+\\
+    &=\left.\frac{\partial a}{\partial \tau}\frac{e^{-\imath\left(\omega_l-\omega_{ce}\right)\left(t-\tau\right)}}{\imath\left(\omega_l-\omega_{ce}\right)}\right|^{t}_{0} - \int^{t} \frac{e^{-\imath\left(\omega_l-\omega_{ce}\right)\left(t-\tau\right)}}{\imath\left(\omega_l-\omega_{ce}\right)}d \frac{\partial a}{\partial\tau}
+    \\
+    &\simeq \frac{\partial a}{\partial t}\frac{1}{\imath\left(\omega_{l}-\omega_{ce}\right)}~.
+\end{aligned}
+\end{equation}
+Note that we also neglect the integral term that contains the second order derivative of $a$.
+After some simple algebra, we reduce the equation (\ref{eq.wave_2nd}) to the first order wave equation as,
+\begin{equation}\label{eq.wave_1st}
+    \frac{\partial a}{\partial t} +v_g \frac{\partial a}{\partial s} =\frac{\imath v_g}{2 k_l} j_p
+\end{equation}
+where  $v_g = 2 k_l / (\omega_l + \omega_p^2 \omega_{ce}/(\omega_{ce}-\omega_l)^2) $  is the group velocity of the linear whistler wave.

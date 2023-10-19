@@ -83,13 +83,12 @@ We replace $f$ by $\Delta f$ in the current integral in Eq. (\ref{eq.nonlinear_J
 \begin{equation}
     j_p(s_i,t) \approx - \sqrt{2m_e\omega_{ce}(s)(\mathcal{J} + \Pi_i(t))}\int\mathrm{d} \mathcal{J} \int_0^{I_{\mathrm{s p x}}}  \mathrm{d}\mathcal{I}  \int_0^{2\pi} \mathrm{d}\psi  \Delta f(s_i,\mathcal{J},\mathcal{I},\xi,t)e^{\imath \xi}  ~,
 \end{equation}
-since $\mathrm{d}\xi\mathrm{d}\Omega = \mathrm{d}\mathcal{I}\mathrm{d}\psi$, where the $\psi$ is the angle variable of $\mathcal{I}$.
-
-Note that $\mathrm{d}\mathcal{I} = \Omega \mathrm{d}\xi$, thus differential element $\mathrm{d}\psi = 1/\Omega \mathrm{d}\xi$, and we define
+since $\mathrm{d}\xi\mathrm{d}\Omega = \mathrm{d}\mathcal{I}\mathrm{d}\psi$, where $\psi$ is the angle variable of $\mathcal{I}$.
+From the Jacobi of the differential element, the integral over $\psi$ 
 \begin{equation}
-      \int f \mathrm{d}\psi = \int \frac{f}{\Omega}\mathrm{d}\xi \equiv {2\pi \tau} \langle f \rangle
+      \int f \mathrm{d}\psi = \int f \frac{\mathrm{d}\Omega}{\mathrm{d}\mathcal{I}}\mathrm{d}\xi = \frac{\partial H}{\partial \mathcal{I}}  \int f \frac{\mathrm{d}\Omega}{\mathrm{d} H}\mathrm{d}\xi = \langle f \rangle
 \end{equation}
-where $\tau = \langle 1 \rangle/2\pi$ and the bracket $\langle ... \rangle$ denotes the bounce average.
+where $\langle ... \rangle$ denotes the bounce average as given in ref. \cite{berk1999}.
 Thus the current integral becomes
 \begin{equation}
     j_p(s_i,t) \approx -  {2\pi \tau} \sqrt{2m_e\omega_{ce}(s)(\mathcal{J} + \Pi_i(t))}\int\mathrm{d} \mathcal{J} \int_0^{I_{\mathrm{s p x}}}\mathrm{d}\mathcal{I}  \langle \Delta f(s_i,\mathcal{J},\mathcal{I},\xi,t)e^{\imath \xi} \rangle  ~.
@@ -118,11 +117,11 @@ where the boundary trapped particle phase space hole can be analytically given,
 \end{equation}
 $e_{spx}$ is the Hamiltonian on the separatrix.
 
-Here we define two function of $\alpha$
+Here we define two functions of $\alpha$
 \begin{equation}
     \begin{aligned}
         m_{spx}(\alpha) & \equiv \langle \cos \xi \rangle  \mathcal{I}_{spx} = \frac{\sqrt{2} \omega_b}{\kappa^2} \oint_{s p x} d \xi \cos \xi \sqrt{e_{s p x}-\cos \xi-\alpha \xi} \\
-        n_{spx}(\alpha) & \equiv \alpha \mathcal{I}_{spx} = \frac{\sqrt{2} \omega_b}{\kappa^2} \oint_{s p x} d \xi \sqrt{e_{s p x}-\cos \xi-\alpha \xi} ~.
+        n_{spx}(\alpha) & \equiv \alpha \mathcal{I}_{spx} = \alpha \frac{\sqrt{2} \omega_b}{\kappa^2} \oint_{s p x} d \xi \sqrt{e_{s p x}-\cos \xi-\alpha \xi} ~.
     \end{aligned}
 \end{equation}
 The current can be directly obtained as 
