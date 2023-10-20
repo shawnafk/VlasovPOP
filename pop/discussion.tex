@@ -65,9 +65,9 @@ The constant for each cell is determined by the initial choice of $\mathcal{J}$,
 
 \subsection{The adiabatic theory}
 %solve current integral and obtain the chirping law
-In the previous section, we obtain the nonlinear current from the velocity momentum of perturbed distribution function. 
-The current dominates the nonlinear behavior of the chorus chirping process, and under certain condition, we can simplify the phase space integral and show qualitatively how does the current forms.
-At the nonlinear stage, the distribution function of the trapped electrons forms a hole in the phase space, and we consider the deviation from the unperturbed distribution $\Delta f$, i.e., the depth of the hole.
+In the previous section, we obtain the nonlinear current from the velocity moment of the perturbed distribution function. 
+The current dominates the nonlinear behavior of the chorus chirping process, and under certain condition, we can simplify the phase space integral and show qualitatively how does the current evolves.
+At the nonlinear stage, the distribution function of the trapped electrons forms a hole in the phase space, and we consider its deviation from the unperturbed distribution $\Delta f$, i.e., the depth of the hole.
 Since the equilibrium distribution does not contribute to the current, the nonlinear current is directly determined by $\Delta f$, 
 
 %the adiabatic invariant 
@@ -77,31 +77,32 @@ For those electrons trapped by the slowly varying wave envelope and circling aro
 \end{equation}
 where the momentum $\Omega$ is the function of local Hamiltonian.
 %and the distribution expansion
-The deviation can be written as the function of the adiabatic invariant, i.e., $\Delta f(s_i,\mathcal{J},\mathcal{I},\xi,t)$.
+The depth of the hole can be written as the function of the adiabatic invariant, i.e., $\Delta f(s_i,\mathcal{J},\mathcal{I},\xi,t)$.
 
-We replace $f$ by $\Delta f$ in the current integral in Eq. (\ref{eq.nonlinear_J}) and directly change the integral to 
+Now we replace $f$ by $\Delta f$ in the current integral in Eq. (\ref{eq.nonlinear_J}) and directly change the integral to 
 \begin{equation}
-    j_p(s_i,t) \approx - \sqrt{2m_e\omega_{ce}(s)(\mathcal{J} + \Pi_i(t))}\int\mathrm{d} \mathcal{J} \int_0^{I_{\mathrm{s p x}}}  \mathrm{d}\mathcal{I}  \int_0^{2\pi} \mathrm{d}\psi  \Delta f(s_i,\mathcal{J},\mathcal{I},\xi,t)e^{\imath \xi}  ~,
+    j_p(s_i,t) \approx - \int\mathrm{d} \mathcal{J} \sqrt{2 m_e \omega_{ce} (\mathcal{J} + \Pi_i(t))} \int_0^{\mathcal{I}_{\mathrm{s p x}}}  \mathrm{d}\mathcal{I}  \oint \mathrm{d}\psi  \Delta f(s_i,\mathcal{J},\mathcal{I},\xi,t)e^{\imath \xi}  ~,
 \end{equation}
-since $\mathrm{d}\xi\mathrm{d}\Omega = \mathrm{d}\mathcal{I}\mathrm{d}\psi$, where $\psi$ is the angle variable of $\mathcal{I}$.
+Note that $\Omega$ in the square root can be neglect since $\Omega \simeq 0$.
+The differential element $\mathrm{d}\xi\mathrm{d}\Omega$ is changed to $\mathrm{d}\mathcal{I}\mathrm{d}\psi$, where $\psi$ is the angle variable of $\mathcal{I}$.
 From the Jacobi of the differential element, the integral over $\psi$ 
 \begin{equation}
-      \int f \mathrm{d}\psi = \int f \frac{\mathrm{d}\Omega}{\mathrm{d}\mathcal{I}}\mathrm{d}\xi = \frac{\partial H}{\partial \mathcal{I}}  \int f \frac{\mathrm{d}\Omega}{\mathrm{d} H}\mathrm{d}\xi = \langle f \rangle
+      \oint f \mathrm{d}\psi = \oint f \frac{\mathrm{d}\Omega}{\mathrm{d}\mathcal{I}}\mathrm{d}\xi = \frac{\partial H}{\partial \mathcal{I}} \oint f \frac{\mathrm{d}\Omega}{\mathrm{d} H}\mathrm{d}\xi = \dot{\psi}\oint \frac{f}{\Omega} \mathrm{d}\xi = 2 \pi \langle f \rangle
 \end{equation}
-where $\langle ... \rangle$ denotes the bounce average as given in ref. \cite{berk1999}.
+where $\langle\cdots\rangle$ denotes the bounce average following the definition in ref. \cite{berk1999}.
 Thus the current integral becomes
-\begin{equation}
-    j_p(s_i,t) \approx -  {2\pi \tau} \sqrt{2m_e\omega_{ce}(s)(\mathcal{J} + \Pi_i(t))}\int\mathrm{d} \mathcal{J} \int_0^{I_{\mathrm{s p x}}}\mathrm{d}\mathcal{I}  \langle \Delta f(s_i,\mathcal{J},\mathcal{I},\xi,t)e^{\imath \xi} \rangle  ~.
+\begin{equation}\label{eq.adiabatic_current}
+    j_p(s_i,t) \approx -  {2\pi} \int\mathrm{d} \mathcal{J}  \sqrt{2m_e\omega_{ce} (\mathcal{J} + \Pi_i(t))} \int_0^{\mathcal{I}_{\mathrm{s p x}}}\mathrm{d}\mathcal{I}  \langle \Delta f(s_i,\mathcal{J},\mathcal{I},\xi,t)e^{\imath \xi} \rangle  ~.
 \end{equation}
 
 For the adiabatic regime, the characteristic scales should vary considerably slowly compared to the wave trapping scale.
-There exists a small scale $\epsilon$ satisfies condition \cite{berk1999}
+There exists a small scale $\epsilon$ satisfies \cite{berk1999}
 \begin{equation}
-    \epsilon \equiv \mathrm{max}\left(\ddot{ \omega}/\omega_b^3, \dot{\omega}/\omega_b^2, \omega_b/\omega \right) \ll 1~,
+    \epsilon \equiv \mathrm{max}\left(\ddot{\omega}/\omega_b^3, \dot{\omega}/\omega_b^2, \omega_b/\omega \right) \ll 1~,
 \end{equation}
-Here, $\omega$ in our context represents the deviation from $\omega_l$.
-For the chorus wave field, the frequency, and other quantities change slowly in one bounce period, satisfying the first and the second inequalities. The last term requires the frequency has chirped a notable distance, i.e., the nonlinear stage, where the hole has been separated from the equilibrium.
-$\Delta f$ can be expanded in powers of $\epsilon$ and follows the derivation in ref. \cite{berk1999}, we keep to the first order term, the average integrals are
+Here, $\omega$ is the frequency deviation from the resonance center in our context.
+For the chorus wave field, the frequency, and other quantities change slowly in one bounce period, satisfying the first and the second inequalities. The last term requires the frequency chirped a notable distance, i.e., the nonlinear stage, where the hole has been separated from the equilibrium.
+$\Delta f$ can be expanded in powers of $\epsilon$ and follows the derivation in ref. \cite{berk1999}, the bounce averages in Eq.~(\ref{eq.adiabatic_current}) are
 \begin{equation}
     \begin{aligned}
     \langle\Delta f \sin \xi \rangle &\simeq \alpha \Delta f_0 ~, \\ 
@@ -109,32 +110,51 @@ $\Delta f$ can be expanded in powers of $\epsilon$ and follows the derivation in
     \end{aligned}
 \end{equation}
 %approximation 2, I is constant over trapped region
-Moreover, we further assume that $\Delta f_0$ is independent with $\mathcal{I}$, which indicates the depth of the hole is flat with in the enclosed phase space region, i.e., the water bag approximation \cite{omura_theory_2008,hezaveh2021}. Therefore, the integral over $\mathcal{I}$ only depend on the $I_\mathcal{max}$ which is the one on the separatrix. 
+Moreover, we further assume that $\Delta f_0$ is independent with $\mathcal{I}$, which indicates the depth of the hole is flat within the enclosed phase space region, i.e., the water bag approximation \cite{omura_theory_2008,hezaveh2021}. Therefore, the integral over $\mathcal{I}$ only depend on the $\mathcal{I}_\mathrm{spx}$ which is the one on the separatrix. 
 According to equation (\ref{eq.def_I}), the integral becomes
 \begin{equation}
-    \int^{\mathcal{I}_{s p x}}_0 \mathrm{d}\mathcal{I} = \mathcal{I}_{s p x} \equiv \oint_{s p x} \Omega (\xi) d \xi.
+    \int^{\mathcal{I}_\mathrm{s p x}}_0 \mathrm{d}\mathcal{I} = \mathcal{I}_\mathrm{s p x} \equiv \oint_\mathrm{s p x} \Omega (\xi) \mathrm{d} \xi~,
 \end{equation}
 where the boundary trapped particle phase space hole can be analytically given,
 \begin{equation}
-    \Omega(\xi) = \pm \frac{\omega_b}{k^2} \sqrt{2 (e_{spx}-\cos \xi - \alpha \xi)}~,
+    \Omega(\xi) = \pm \frac{\omega_b}{k^2} \sqrt{2 (e_\mathrm{spx}-\cos \xi - \alpha \xi)}~,
 \end{equation}
-$e_{spx}$ is the Hamiltonian on the separatrix.
-
-Here we define two functions of $\alpha$
-\begin{equation}
+and $e_{spx}$ denotes the Hamiltonian on the separatrix. Now we define two functions of $\alpha$
+\begin{equation}\label{eq.function}
     \begin{aligned}
-        m_{spx}(\alpha) & \equiv \langle \cos \xi \rangle  \mathcal{I}_{spx} = \frac{\sqrt{2} \omega_b}{\kappa^2} \oint_{s p x} d \xi \cos \xi \sqrt{e_{s p x}-\cos \xi-\alpha \xi} \\
-        n_{spx}(\alpha) & \equiv \alpha \mathcal{I}_{spx} = \alpha \frac{\sqrt{2} \omega_b}{\kappa^2} \oint_{s p x} d \xi \sqrt{e_{s p x}-\cos \xi-\alpha \xi} ~.
+        m_{spx}(\alpha) & \equiv \langle \cos \xi \rangle  \mathcal{I}_\mathrm{spx} = \frac{\sqrt{2} \omega_b}{k^2} \oint_\mathrm{s p x} \mathrm{d} \xi \cos \xi \sqrt{e_\mathrm{s p x}-\cos \xi-\alpha \xi} 
+        \\
+        n_{spx}(\alpha) & \equiv \alpha \mathcal{I}_\mathrm{spx} = \alpha \frac{\sqrt{2} \omega_b}{k^2} \oint_\mathrm{s p x} \mathrm{d} \xi \sqrt{e_\mathrm{s p x}-\cos \xi-\alpha \xi}~,
     \end{aligned}
 \end{equation}
-The current can be directly obtained as 
+and yield current 
 \begin{equation}\label{eq.adi_J}
-    j_p \approx \frac{2 \omega_b}{\kappa^2} \sqrt{\omega_{c e}(s)(J+\Pi)}\left(m_{s p x}+\imath ~ n_{s p x}\right) \int d \mathcal{J} \Delta f(\mathcal{J},s_i,t) ~.
+    j_p(s_i,t) \approx \frac{4 \pi \omega_b}{k^2} \left(m_\mathrm{s p x}+\imath ~ n_\mathrm{s p x}\right) \int \mathrm{d} \mathcal{J} \sqrt{m_e \omega_{c e}(\mathcal{J}+\Pi_i(t))} \Delta f(\mathcal{J},s_i,t) ~.
 \end{equation}
 %the nonlinaer currnet and the chirping rate ...
 %differnece with omura 
 %process approxiamtion strict follows adiabatic approximation
 %why the hole is oblique
 %alpha value should small to validate approximation
-
 %figure
+
+\begin{figure}
+    \centering
+    \includegraphics[scale=0.5]{img/fig_adiabatic.pdf}
+    \caption{The current ratio with respect to the inhomogeneous parameter $\alpha$. The scattered points are from numerical simulation in ref. \cite{zheng2023b}, while the solid curves denotes the results from adiabatic approximation.}
+    \label{fig.adiabatic}
+\end{figure}
+
+
+The temporospatial evolution of the nonlinear current only depends on the integral over the slowly varying scale $\mathcal{J}$, and an inhomogeneity parameter $\alpha$, defined in Eq. (\ref{eq.alp0.5}). 
+The $\mathcal{J}$ integral can be solved further harnessing the adiabatic motion of the trapped particle along the magnetic field line, similar to the previous work \cite{summers2012}. 
+However, we first need to show the validity of the adiabatic approximation. 
+
+
+To do so, we examine the ratio of the imaginary and real component of $j_p$, i.e., $\mathrm{real}(j_p)/\mathrm{imag}(j_p)$. The dependence on the integral is removed and the ratio only depends on the value $\alpha$.
+From the adiabatic theory, Eqs. (\ref{eq.adi_J}) and (\ref{eq.function}), we obtain the current ratio as function of $\alpha$ and show the relation in Fig. \ref{fig.adiabatic}.
+Also, base on the above-mentioned Vlasov theory, we performed a corresponding numerical simulation \cite{zheng2023b}, in which the current is obtained directly from Eq. (\ref{eq.nonlinear_J}).
+The corresponding $\alpha$ is obtained from the definition in Eq. (\ref{eq.alp0.5}) using the simulation data.
+The comparison of the current ratio obtained with the adiabatic results show two different behavior.
+The in the wide spatial range far from the magnetic equator (triangle shape), the simulation results well agree with the adiabatic approximation. While in the equator region (circle shape), the adiabatic approximation ceases to be valid. 
+This indicates a rapid variation of the phase space in the equator region, which is related to the generation of the nonlinear chorus wave.
