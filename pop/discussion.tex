@@ -110,7 +110,8 @@ $\Delta f$ can be expanded in powers of $\epsilon$ and follows the derivation in
     \end{aligned}
 \end{equation}
 %approximation 2, I is constant over trapped region
-Moreover, we further assume that $\Delta f_0$ is independent with $\mathcal{I}$, which indicates the depth of the hole is flat within the enclosed phase space region, i.e., the water bag approximation \cite{omura_theory_2008,hezaveh2021}. Therefore, the integral over $\mathcal{I}$ only depend on the $\mathcal{I}_\mathrm{spx}$ which is the one on the separatrix. 
+Moreover, we further assume that $\Delta f_0$ is independent with $\mathcal{I}$, which indicates the depth of the hole is flat within the enclosed hole area, i.e., the water bag approximation \cite{omura_theory_2008,hezaveh2021}. 
+Therefore, the integral over $\mathcal{I}$ only depend on the $\mathcal{I}_\mathrm{spx}$ which is the one on the separatrix. 
 According to equation (\ref{eq.def_I}), the integral becomes
 \begin{equation}
     \int^{\mathcal{I}_\mathrm{s p x}}_0 \mathrm{d}\mathcal{I} = \mathcal{I}_\mathrm{s p x} \equiv \oint_\mathrm{s p x} \Omega (\xi) \mathrm{d} \xi~,
@@ -119,12 +120,13 @@ where the boundary trapped particle phase space hole can be analytically given,
 \begin{equation}
     \Omega(\xi) = \pm \frac{\omega_b}{k^2} \sqrt{2 (e_\mathrm{spx}-\cos \xi - \alpha \xi)}~,
 \end{equation}
-and $e_{spx}$ denotes the Hamiltonian on the separatrix. Now we define two functions of $\alpha$
+and $e_\mathrm{spx}$ denotes the Hamiltonian on the separatrix. 
+\Now we define two functions of $\alpha$
 \begin{equation}\label{eq.function}
     \begin{aligned}
-        m_{spx}(\alpha) & \equiv \langle \cos \xi \rangle  \mathcal{I}_\mathrm{spx} = \frac{\sqrt{2} \omega_b}{k^2} \oint_\mathrm{s p x} \mathrm{d} \xi \cos \xi \sqrt{e_\mathrm{s p x}-\cos \xi-\alpha \xi} 
+        m_\mathrm{spx}(\alpha) & \equiv \langle \cos \xi \rangle  \mathcal{I}_\mathrm{spx} = \frac{\sqrt{2} \omega_b}{k^2} \oint_\mathrm{s p x} \mathrm{d} \xi \cos \xi \sqrt{e_\mathrm{s p x}-\cos \xi-\alpha \xi} 
         \\
-        n_{spx}(\alpha) & \equiv \alpha \mathcal{I}_\mathrm{spx} = \alpha \frac{\sqrt{2} \omega_b}{k^2} \oint_\mathrm{s p x} \mathrm{d} \xi \sqrt{e_\mathrm{s p x}-\cos \xi-\alpha \xi}~,
+        n_\mathrm{spx}(\alpha) & \equiv \alpha \mathcal{I}_\mathrm{spx} = \alpha \frac{\sqrt{2} \omega_b}{k^2} \oint_\mathrm{s p x} \mathrm{d} \xi \sqrt{e_\mathrm{s p x}-\cos \xi-\alpha \xi}~,
     \end{aligned}
 \end{equation}
 and yield current 
@@ -141,20 +143,20 @@ and yield current
 \begin{figure}
     \centering
     \includegraphics[scale=0.5]{img/fig_adiabatic.pdf}
-    \caption{The current ratio with respect to the inhomogeneous parameter $\alpha$. The scattered points are from numerical simulation in ref. \cite{zheng2023b}, while the solid curves denotes the results from adiabatic approximation.}
+    \caption{The current ratio with respect to the inhomogeneous parameter $\alpha$. The scattered points denote the ratio and $\alpha$ at difference spatial locations obtained from the numerical simulation in ref. \cite{zheng2023b}. 
+    The solid curve is the result from adiabatic approximation.
+    }
     \label{fig.adiabatic}
 \end{figure}
 
-
 The temporospatial evolution of the nonlinear current only depends on the integral over the slowly varying scale $\mathcal{J}$, and an inhomogeneity parameter $\alpha$, defined in Eq. (\ref{eq.alp0.5}). 
-The $\mathcal{J}$ integral can be solved further harnessing the adiabatic motion of the trapped particle along the magnetic field line, similar to the previous work \cite{summers2012}. 
-However, we first need to show the validity of the adiabatic approximation. 
-
-
-To do so, we examine the ratio of the imaginary and real component of $j_p$, i.e., $\mathrm{real}(j_p)/\mathrm{imag}(j_p)$. The dependence on the integral is removed and the ratio only depends on the value $\alpha$.
-From the adiabatic theory, Eqs. (\ref{eq.adi_J}) and (\ref{eq.function}), we obtain the current ratio as function of $\alpha$ and show the relation in Fig. \ref{fig.adiabatic}.
+The $\mathcal{J}$ integral can be solved further harnessing the adiabatic motion of the trapped particle along the magnetic field line, similar to the previous work \cite{summers2012}. While $m_\mathrm{spx}$ and $n_\mathrm{spx}$ can be numerical integrated from Eq. (\ref{eq.function}).
+Note that, since the hole is aligned with the slowly varying wave packet,  $\Delta f$ also contributes a complex phase $\phi_a(s_i,t)$ which is the phase of the slowly varying wave packet $\phi_a \equiv \arg(a)$.
+Thus, the current in Eq. (\ref{eq.adi_J}) is proportional to $(m_\mathrm{s p x}+\imath ~ n_\mathrm{s p x}) \exp({\imath \phi_a(s_i,t)})$.
+Now we can show the validity of the adiabatic approximation by examining the ratio of the imaginary and real component of $j_p$, i.e., $\mathrm{real}(j_p)/\mathrm{imag}(j_p)$.
+The current ratio as function of $\alpha$ is shown in Fig. \ref{fig.adiabatic}.
 Also, base on the above-mentioned Vlasov theory, we performed a corresponding numerical simulation \cite{zheng2023b}, in which the current is obtained directly from Eq. (\ref{eq.nonlinear_J}).
 The corresponding $\alpha$ is obtained from the definition in Eq. (\ref{eq.alp0.5}) using the simulation data.
-The comparison of the current ratio obtained with the adiabatic results show two different behavior.
-The in the wide spatial range far from the magnetic equator (triangle shape), the simulation results well agree with the adiabatic approximation. While in the equator region (circle shape), the adiabatic approximation ceases to be valid. 
+From Fig. \ref{fig.adiabatic}, we can find that the simulation results in a wide spatial range from the magnetic equator to the high latitude region (triangle shape) well agree with the adiabatic approximation.
+While near the equator region (circle shape), the adiabatic approximation ceases to be valid. 
 This indicates a rapid variation of the phase space in the equator region, which is related to the generation of the nonlinear chorus wave.
