@@ -51,11 +51,18 @@ In addition, with the onset condition, the motion equation (\ref{eq.m3}) for $\m
 \end{equation}
 Multiplying $\omega_l - \omega_{ce}$ on both sides to construct $v_r$ on the spatial derivative of $\omega_{ce}$ that change the spatial derivative to exact time derivative, i.e., 
 \begin{equation}
-    (\omega_l - \omega_{ce}) \frac{\mathrm{d}\mathcal{J}}{\mathrm{d}t} \simeq  \frac{m_e(\omega_l - \omega_{ce})^2}{k_l^3} \frac{\mathrm{d} k_l}{\mathrm{d} s_i} + \frac{m_e(\omega_l - \omega_{ce})}{k_l^2} \frac{\mathrm{d} \omega_{ce}}{\mathrm{d} t} + \mathcal{J}\frac{\mathrm{d} \omega_{ce}}{\mathrm{d} t}~.
+\begin{aligned}
+    (\omega_l - \omega_{ce}) \frac{\mathrm{d}\mathcal{J}}{\mathrm{d}t} & \simeq \frac{m_e(\omega_l - \omega_{ce})^2}{k_l^3} \frac{\mathrm{d} k_l}{\mathrm{d} s_i} \\ 
+    &+ \frac{m_e(\omega_l - \omega_{ce})}{k_l^2} \frac{\mathrm{d} \omega_{ce}}{\mathrm{d} t} + \mathcal{J}\frac{\mathrm{d} \omega_{ce}}{\mathrm{d} t}~.
+\end{aligned}
 \end{equation}
 Further using the identity $\mathrm{d}\omega_l/\mathrm{d}t \equiv 0$, we obtain the following relation
 \begin{equation}
-    (\omega_l - \omega_{ce}) \frac{\mathrm{d}\mathcal{J}}{\mathrm{d}t} + \mathcal{J}\frac{\mathrm{d}}{\mathrm{d} t}(\omega_l - \omega_{ce}) \simeq - m_e\left((\omega_l - \omega_{ce})^2 \frac{\mathrm{d}}{\mathrm{d} t}\frac{1}{2 k_l^2} + \frac{1}{2 k_l^2} \frac{\mathrm{d}}{\mathrm{d} t}(\omega_l - \omega_{ce})^2\right)~.
+\begin{aligned}
+    &(\omega_l - \omega_{ce}) \frac{\mathrm{d}\mathcal{J}}{\mathrm{d}t} + \mathcal{J}\frac{\mathrm{d}}{\mathrm{d} t}(\omega_l - \omega_{ce}) \simeq 
+    \\
+    &- m_e\left((\omega_l - \omega_{ce})^2 \frac{\mathrm{d}}{\mathrm{d} t}\frac{1}{2 k_l^2} + \frac{1}{2 k_l^2} \frac{\mathrm{d}}{\mathrm{d} t}(\omega_l - \omega_{ce})^2\right)~.
+\end{aligned}
 \end{equation}
 The equation is clearly to be analytically integrated, and yields
 \begin{equation}\label{eq.Jcons}
@@ -67,6 +74,8 @@ The constant for each cell is determined by the initial choice of $\mathcal{J}$,
 %solve current integral and obtain the chirping law
 In the previous section, we obtain the nonlinear current from the velocity moment of the perturbed distribution function. 
 The current dominates the nonlinear behavior of the chorus chirping process, and under certain condition, we can simplify the phase space integral and show qualitatively how does the current evolves.
+
+
 At the nonlinear stage, the distribution function of the trapped electrons forms a hole in the phase space, and we consider its deviation from the unperturbed distribution $\Delta f$, i.e., the depth of the hole.
 Since the equilibrium distribution does not contribute to the current, the nonlinear current is directly determined by $\Delta f$, 
 
@@ -81,7 +90,11 @@ The depth of the hole can be written as the function of the adiabatic invariant,
 
 Now we replace $f$ by $\Delta f$ in the current integral in Eq. (\ref{eq.nonlinear_J}) and directly change the integral to 
 \begin{equation}
-    j_p(s_i,t) \approx - \int\mathrm{d} \mathcal{J} \sqrt{2 m_e \omega_{ce} (\mathcal{J} + \Pi_i(t))} \int_0^{\mathcal{I}_{\mathrm{s p x}}}  \mathrm{d}\mathcal{I}  \oint \mathrm{d}\psi  \Delta f(s_i,\mathcal{J},\mathcal{I},\xi,t)e^{\imath \xi}  ~,
+\begin{aligned}
+    j_p(s_i,t) &\approx - \int\mathrm{d} \mathcal{J} \sqrt{2 m_e \omega_{ce} (\mathcal{J} + \Pi_i(t))} \times
+    \\
+    &\int_0^{\mathcal{I}_{\mathrm{s p x}}}  \mathrm{d}\mathcal{I}  \oint \mathrm{d}\psi  \Delta f(s_i,\mathcal{J},\mathcal{I},\xi,t)e^{\imath \xi}  ~,
+\end{aligned}
 \end{equation}
 Note that $\Omega$ in the square root can be neglect since $\Omega \simeq 0$.
 The differential element $\mathrm{d}\xi\mathrm{d}\Omega$ is changed to $\mathrm{d}\mathcal{I}\mathrm{d}\psi$, where $\psi$ is the angle variable of $\mathcal{I}$.
@@ -92,7 +105,11 @@ From the Jacobi of the differential element, the integral over $\psi$
 where $\langle\cdots\rangle$ denotes the bounce average following the definition in ref. \cite{berk1999}.
 Thus the current integral becomes
 \begin{equation}\label{eq.adiabatic_current}
-    j_p(s_i,t) \approx -  {2\pi} \int\mathrm{d} \mathcal{J}  \sqrt{2m_e\omega_{ce} (\mathcal{J} + \Pi_i(t))} \int_0^{\mathcal{I}_{\mathrm{s p x}}}\mathrm{d}\mathcal{I}  \langle \Delta f(s_i,\mathcal{J},\mathcal{I},\xi,t)e^{\imath \xi} \rangle  ~.
+\begin{aligned}
+    j_p(s_i,t) & \approx -  {2\pi} \int\mathrm{d} \mathcal{J}  \sqrt{2m_e\omega_{ce} (\mathcal{J} + \Pi_i(t))}  \times 
+    \\
+    &\int_0^{\mathcal{I}_{\mathrm{s p x}}}\mathrm{d}\mathcal{I}  \langle \Delta f(s_i,\mathcal{J},\mathcal{I},\xi,t)e^{\imath \xi} \rangle  ~.
+\end{aligned}
 \end{equation}
 
 For the adiabatic regime, the characteristic scales should vary considerably slowly compared to the wave trapping scale.
@@ -120,18 +137,27 @@ where the boundary trapped particle phase space hole can be analytically given,
 \begin{equation}
     \Omega(\xi) = \pm \frac{\omega_b}{k^2} \sqrt{2 (e_\mathrm{spx}-\cos \xi - \alpha \xi)}~,
 \end{equation}
-and $e_\mathrm{spx}$ denotes the Hamiltonian on the separatrix, c.f. ref. \cite{zheng2023b}.
+and $e_\mathrm{spx}$ denotes the Hamiltonian on the separatrix.
+%, cf. ref. \cite{zheng2023b}.
 Now we define two functions of $\alpha$
 \begin{equation}\label{eq.function}
     \begin{aligned}
-        m_\mathrm{spx}(\alpha) & \equiv \langle \cos \xi \rangle  \mathcal{I}_\mathrm{spx} = \frac{\sqrt{2} \omega_b}{k^2} \oint_\mathrm{s p x} \mathrm{d} \xi \cos \xi \sqrt{e_\mathrm{s p x}-\cos \xi-\alpha \xi} 
+        m_\mathrm{spx}(\alpha) & \equiv \langle \cos \xi \rangle  \mathcal{I}_\mathrm{spx}
         \\
-        n_\mathrm{spx}(\alpha) & \equiv \alpha \mathcal{I}_\mathrm{spx} = \alpha \frac{\sqrt{2} \omega_b}{k^2} \oint_\mathrm{s p x} \mathrm{d} \xi \sqrt{e_\mathrm{s p x}-\cos \xi-\alpha \xi}~,
+        &= \frac{\sqrt{2} \omega_b}{k^2} \oint_\mathrm{s p x} \mathrm{d} \xi \cos \xi \sqrt{e_\mathrm{s p x}-\cos \xi-\alpha \xi} 
+        \\
+        n_\mathrm{spx}(\alpha) & \equiv \alpha \mathcal{I}_\mathrm{spx} 
+        \\
+        & = \alpha \frac{\sqrt{2} \omega_b}{k^2} \oint_\mathrm{s p x} \mathrm{d} \xi \sqrt{e_\mathrm{s p x}-\cos \xi-\alpha \xi}~,
     \end{aligned}
 \end{equation}
 and yield current 
 \begin{equation}\label{eq.adi_J}
-    j_p(s_i,t) \approx \frac{4 \pi \omega_b}{k^2} \left(m_\mathrm{s p x}+\imath ~ n_\mathrm{s p x}\right) \int \mathrm{d} \mathcal{J} \sqrt{m_e \omega_{c e}(\mathcal{J}+\Pi_i(t))} \Delta f(\mathcal{J},s_i,t) ~.
+    \begin{aligned}
+    j_p(s_i,t) &\approx 2 \pi\left(m_\mathrm{s p x}+\imath ~ n_\mathrm{s p x}\right) \times 
+    \\
+    &\int \mathrm{d} \mathcal{J} \sqrt{m_e \omega_{c e}(\mathcal{J}+\Pi_i(t))} \Delta f(\mathcal{J},s_i,t) ~.
+    \end{aligned}
 \end{equation}
 %the nonlinaer currnet and the chirping rate ...
 %differnece with omura 
@@ -159,4 +185,4 @@ Also, base on the above-mentioned Vlasov theory, we performed a corresponding nu
 The corresponding $\alpha$ is obtained from the definition in Eq. (\ref{eq.alp0.5}) using the simulation data.
 From Fig. \ref{fig.adiabatic}, we can find that the simulation results in a wide spatial range from the magnetic equator to the high latitude region (triangle shape) well agree with the adiabatic approximation.
 While near the equator region (circle shape), the adiabatic approximation ceases to be valid. 
-This indicates a rapid variation of the phase space in the equator region, which is related to the generation of the nonlinear chorus wave.
+This indicates a rapid variation of the phase space in the equator region, which is related to the generation of the nonlinear chorus wave. The results of nonadiabtic regime also agree with previous numerical simulations \cite{tao2017a,tao2017b}.
